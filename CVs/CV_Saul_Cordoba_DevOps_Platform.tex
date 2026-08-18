@@ -1,0 +1,90 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Saul Cordoba - CV DevOps Platform},
+    pdfauthor={Saul Cordoba},
+    pdfsubject={DevOps \& Platform Engineer | Docker, CI/CD, Linux},
+}
+
+\pagestyle{empty}
+\urlstyle{same}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+%--- HEADER ---
+\begin{center}
+    {\Huge \bfseries SAÚL CÓRDOBA} \\[3pt]
+    {\Large \textbf{DevOps \& Platform Engineer | Docker, CI/CD, Linux}} \\[2pt]
+    Villavicencio, Colombia (Disponible para Trabajo Remoto / Relocalización) \\
+    (+57) 321 961 1182 | \href{mailto:sauleduardo1111@gmail.com}{sauleduardo1111@gmail.com} | \href{https://github.com/Garetetete}{GitHub: Garetetete} | \href{https://www.linkedin.com/in/saul-eduardo-cordoba-romero-13b5b72b6}{LinkedIn} | \textbf{Inglés:} B2
+\end{center}
+
+%--- PERFIL PROFESIONAL ---
+\section{PERFIL PROFESIONAL}
+\textbf{Ingeniero DevOps/Platform} con experiencia operando plataformas \textbf{en producción}: orquestación de 8 servicios con Docker Compose, entornos QA/producción, autenticación centralizada con Keycloak, backups automatizados, self-healing y pipelines \textbf{CI/CD en Azure DevOps y GitHub Actions}. Base sólida como desarrollador backend (Python/FastAPI, C\#/.NET), lo que permite operar y depurar lo que se despliega. Ingeniero Electrónico con doble especialización (Instrumentación y Control Industrial; Ingeniería de Software).
+
+%--- HABILIDADES TÉCNICAS ---
+\section{HABILIDADES TÉCNICAS}
+\begin{itemize}
+    \item \textbf{Contenedores y orquestación:} Docker, Docker Compose multi-entorno (dev/QA/test), Dockerfiles multi-servicio, healthchecks, autoheal, límites de recursos, rotación de logs.
+    \item \textbf{CI/CD:} Azure DevOps Pipelines, GitHub Actions, despliegue continuo, gestión de pipelines y repositorios, quality gates (ruff, pytest).
+    \item \textbf{Infraestructura:} Linux (avanzado), SSH y despliegue remoto en servidores, nginx (reverse proxy), ngrok, Railway, Google Cloud (Vertex AI, Secret Manager, Cloud Storage/Logging).
+    \item \textbf{Seguridad y auth:} Keycloak (OAuth2/OIDC), JWT, cifrado de secretos (Fernet), Row-Level Security en PostgreSQL.
+    \item \textbf{Datos y automatización:} PostgreSQL 15, Oracle, SQL, Redis, backups automatizados (pg\_dump), n8n, scripting en PowerShell y Bash.
+    \item \textbf{Lenguajes:} Python, C\# (.NET), C, C++, Java, TypeScript/JavaScript, SQL.
+\end{itemize}
+
+%--- EXPERIENCIA ---
+\section{EXPERIENCIA PROFESIONAL}
+
+\textbf{Desarrollador de Software} \hfill \textbf{2025 -- Presente} \\
+\textit{SASOFTCO} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Plataforma SaaS en producción} (de análisis documental con IA, que \textbf{creé desde cero de extremo a extremo}): orquesté \textbf{8 servicios con Docker Compose} — API FastAPI, microservicio .NET, conversor LibreOffice headless, nginx, Keycloak, PostgreSQL 15, contenedor de backups y autoheal — con healthchecks dependientes (\texttt{/health/ready}), límites de recursos y rotación de logs JSON.
+    \item \textbf{Entornos múltiples}: compose separados para desarrollo, QA y test con sus respectivos archivos de entorno; scripts de arranque y operación en PowerShell y Bash (auto-detección de rutas, reset de base de datos, entrypoints).
+    \item \textbf{Resiliencia y datos}: backups automáticos de PostgreSQL cada 24h con retención de 14 días; contenedor autoheal que reinicia servicios con healthcheck fallido; cifrado de secretos en reposo y Google Secret Manager.
+    \item \textbf{Autenticación centralizada}: Keycloak (OAuth2/OIDC) desplegado en contenedor con validación JWT server-side y realm propio; aislamiento multi-tenant con seguridad a nivel de fila (RLS) en PostgreSQL.
+    \item \textbf{CI/CD}: pipelines en \textbf{Azure DevOps} y \textbf{GitHub Actions} para microservicios .NET con Angular y React, y stacks de automatización (n8n + PostgreSQL 16 + Redis 7 + nginx) en proyectos del sector asegurador.
+    \item Despliegues remotos por SSH en servidores Linux y despliegue de aplicaciones en Railway.
+\end{itemize}
+
+\textbf{Desarrollador / Analista de Datos} \hfill \textbf{2024 -- 2025} \\
+\textit{Btilink SAS} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Analista de datos para Aera Energy LLC} (compañía petrolera de EE.UU.): consultas \textbf{SQL sobre Oracle} y dashboards en \textbf{Tableau/Power BI} sobre volúmenes de producción, ingresos y salidas, usados por varios equipos para el monitoreo continuo de la operación.
+\end{itemize}
+
+%--- EDUCACIÓN ---
+\section{EDUCACIÓN}
+\textbf{Especialización en Ingeniería de Software} \hfill \textbf{2025 -- 2026} \\
+Universidad de los Llanos \\
+\textbf{Especialización en Instrumentación y Control Industrial} \hfill \textbf{2024 -- 2025} \\
+Universidad de los Llanos --- \textit{Modalidad de grado: Diplomado en Sistemas IoT y PLC} \\
+\textbf{Ingeniería Electrónica} \hfill \textbf{2018 -- 2024} \\
+Universidad de los Llanos
+
+%--- CERTIFICACIONES (descomentar y completar cuando tengas los datos) ---
+% \section{CERTIFICACIONES Y DISTINCIONES}
+% \begin{itemize}
+%     \item \textbf{Nombre de la certificación} -- Entidad emisora (Año).
+%     \item \textbf{Distinción académica:} promedio destacado, beca o reconocimiento.
+% \end{itemize}
+
+\end{document}

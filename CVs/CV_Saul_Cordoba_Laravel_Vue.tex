@@ -1,0 +1,94 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Saul Cordoba - CV Fullstack Laravel Vue},
+    pdfauthor={Saul Cordoba},
+    pdfsubject={Desarrollador Fullstack | Laravel 10, Vue 3, TypeScript},
+}
+
+\pagestyle{empty}
+\urlstyle{same}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+%--- HEADER ---
+\begin{center}
+    {\Huge \bfseries SAÚL CÓRDOBA} \\[3pt]
+    {\Large \textbf{Desarrollador Fullstack | Laravel 10 · Vue 3 · TypeScript}} \\[2pt]
+    Villavicencio, Colombia (Disponible para trabajo 100\% remoto) \\
+    (+57) 321 961 1182 | \href{mailto:sauleduardo1111@gmail.com}{sauleduardo1111@gmail.com} | \href{https://github.com/Garetetete}{GitHub: Garetetete} | \href{https://www.linkedin.com/in/saul-eduardo-cordoba-romero-13b5b72b6}{LinkedIn} | \textbf{Inglés:} B2
+\end{center}
+
+%--- PERFIL PROFESIONAL ---
+\section{PERFIL PROFESIONAL}
+\textbf{Desarrollador fullstack} con 2 años de experiencia construyendo \textbf{plataformas web internas, paneles de administración y ERPs a medida}, cubriendo el ciclo completo: análisis de requisitos, modelado de datos, backend, frontend e infraestructura. Experiencia directa con \textbf{Laravel 10 (PHP 8.1) y Vue 3 con TypeScript}, además de Python/FastAPI, C\#/.NET y Angular. Diseñé y llevé a producción en solitario una plataforma de análisis documental con IA. \textbf{Ingeniero Electrónico} con especializaciones en Ingeniería de Software y en Instrumentación y Control Industrial.
+
+%--- HABILIDADES TÉCNICAS ---
+\section{HABILIDADES TÉCNICAS}
+\begin{itemize}
+    \item \textbf{Laravel / PHP:} Laravel 10, PHP 8.1, Eloquent ORM, \textbf{Laravel Sanctum} (auth de API), Form Requests para validación, capa de servicios, migraciones y \textit{seeders}, exportación a Excel (maatwebsite/excel).
+    \item \textbf{Vue 3:} Vue 3.5 con \textbf{TypeScript}, \textbf{Pinia} (gestión de estado), Vue Router, \textbf{Vuetify 3}, Vite, VueUse, Chart.js para dashboards, pruebas con \textbf{Vitest} y Vue Test Utils.
+    \item \textbf{Bases de datos y modelado:} \textbf{MySQL}, PostgreSQL, Oracle, SQL Server, MongoDB, Redis. Diseño de entidades y relaciones, normalización, índices y migraciones versionadas.
+    \item \textbf{APIs e integraciones:} diseño y consumo de \textbf{APIs REST}, autenticación con OAuth2/OIDC y JWT, webhooks de pago, integración con APIs públicas y comerciales, automatización de flujos con n8n.
+    \item \textbf{Otras tecnologías:} Python (FastAPI), C\# (.NET Clean Architecture), Angular, React, Node/Express, TypeScript, SQL.
+    \item \textbf{Herramientas y prácticas:} Git, Azure DevOps (repositorios, tableros y pipelines), Docker y Docker Compose, CI/CD, TDD, desarrollo guiado por especificaciones (SDD), Clean Architecture, modelado de procesos BPMN.
+\end{itemize}
+
+%--- EXPERIENCIA ---
+\section{EXPERIENCIA PROFESIONAL}
+
+\textbf{Desarrollador de Software} \hfill \textbf{2025 -- Presente} \\
+\textit{SASOFTCO} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Plataforma web de análisis documental con IA}, creada desde cero y hoy \textbf{en producción}: responsable único del backend, el frontend, el modelo de datos y la infraestructura, con más de 120 endpoints REST, base de datos multiempresa y 8 servicios orquestados en Docker.
+    \item \textbf{Análisis técnico y reglas de negocio:} identificación de entidades, flujos y reglas para plataformas de trámites de entidades públicas, incluyendo modelado de procesos en \textbf{Camunda BPMN}; participación en decisiones de arquitectura y modelo de datos.
+    \item \textbf{Paneles internos y ERPs:} desarrollo backend y frontend de microservicios .NET con Angular y React para el sector gobierno y asegurador (autenticación, auditoría, notificaciones, generadores de formularios dinámicos).
+    \item \textbf{Integraciones y automatización:} consumo de APIs de datos abiertos del Estado con paginación y control de errores, notificaciones por correo, almacenamiento en la nube y flujos con n8n; repositorios y pipelines CI/CD en Azure DevOps.
+\end{itemize}
+
+\textbf{Desarrollador / Analista de Datos} \hfill \textbf{2024 -- 2025} \\
+\textit{Btilink SAS} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Analista de datos para Aera Energy LLC} (compañía petrolera de EE.UU.): consultas \textbf{SQL sobre Oracle} y dashboards en Tableau y Power BI, usados por varios equipos para el monitoreo continuo de la operación.
+\end{itemize}
+
+%--- PROYECTOS ---
+\section{PROYECTOS CON LARAVEL Y VUE}
+\begin{itemize}
+    \item \textbf{Plataforma de gestión de tours} (\textbf{Laravel 10} + \textbf{Vue 3} + MySQL): API REST con \textbf{9 modelos Eloquent}, 20 controladores, capa de 9 servicios, 10 Form Requests y 12 migraciones, con autenticación Sanctum y exportación a Excel. SPA con \textbf{21 vistas, 15 componentes y 15 stores de Pinia}, Vuetify 3, gráficos Chart.js y pruebas con Vitest. Gestiona tours, inscripciones, productos y merchandising.
+    \item \textbf{Sistema de ticketing con QR} (\textbf{Laravel 10} + PostgreSQL, dockerizado): emisión de tickets firmados, pagos con webhooks, control de aforo y validación anti doble ingreso, consumido desde una tienda web y un escáner de acceso.
+\end{itemize}
+
+%--- EDUCACIÓN ---
+\section{EDUCACIÓN}
+\textbf{Especialización en Ingeniería de Software} \hfill \textbf{2025 -- 2026} \\
+Universidad de los Llanos \\
+\textbf{Especialización en Instrumentación y Control Industrial} \hfill \textbf{2024 -- 2025} \\
+Universidad de los Llanos --- \textit{Modalidad de grado: Diplomado en Sistemas IoT y PLC} \\
+\textbf{Ingeniería Electrónica} \hfill \textbf{2018 -- 2024} \\
+Universidad de los Llanos
+
+%--- CERTIFICACIONES (descomentar y completar cuando tengas los datos) ---
+% \section{CERTIFICACIONES Y DISTINCIONES}
+% \begin{itemize}
+%     \item \textbf{Nombre de la certificación} -- Entidad emisora (Año).
+% \end{itemize}
+
+\end{document}

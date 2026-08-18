@@ -1,0 +1,97 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Saul Cordoba - CV Industrial Control},
+    pdfauthor={Saul Cordoba},
+    pdfsubject={Ingeniero Electronico | Software Industrial, Instrumentacion y Control},
+}
+
+\pagestyle{empty}
+\urlstyle{same}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+%--- HEADER ---
+\begin{center}
+    {\Huge \bfseries SAÚL CÓRDOBA} \\[3pt]
+    {\Large \textbf{Ingeniero Electrónico | Software Industrial, Instrumentación y Control}} \\[2pt]
+    Villavicencio, Colombia (Disponible para Trabajo Remoto / Relocalización) \\
+    (+57) 321 961 1182 | \href{mailto:sauleduardo1111@gmail.com}{sauleduardo1111@gmail.com} | \href{https://github.com/Garetetete}{GitHub: Garetetete} | \href{https://www.linkedin.com/in/saul-eduardo-cordoba-romero-13b5b72b6}{LinkedIn} | \textbf{Inglés:} B2
+\end{center}
+
+%--- PERFIL PROFESIONAL ---
+\section{PERFIL PROFESIONAL}
+\textbf{Ingeniero Electrónico} y \textbf{Especialista en Instrumentación y Control Industrial}, con una segunda especialización en \textbf{Ingeniería de Software} y experiencia profesional construyendo sistemas en producción. Perfil híbrido poco común: formación en \textbf{control análogo y digital, instrumentación, PLC Siemens/TIA Portal, SCADA y sistemas IoT} combinada con ingeniería de software real (Python, C/C++, SQL, Linux, Docker). Experiencia profesional como \textbf{analista de datos de operación petrolera} para el sector energético de EE.UU. (Aera Energy LLC, con SQL sobre Oracle) y en el desarrollo, de extremo a extremo, de una plataforma en producción con \textbf{procesamiento en tiempo real} (120+ endpoints, 8 servicios en Docker).
+
+%--- HABILIDADES TÉCNICAS ---
+\section{HABILIDADES TÉCNICAS}
+\begin{itemize}
+    \item \textbf{Instrumentación y control (formación de posgrado):} teoría de control, control análogo y digital, instrumentación industrial, procesamiento de señales, adquisición y monitoreo de datos de proceso.
+    \item \textbf{Automatización industrial e IoT} (Diplomado en Sistemas IoT y PLC): programación de \textbf{PLC Siemens} con \textbf{TIA Portal}, sistemas \textbf{SCADA}, \textbf{IoT industrial} y lógica de control de procesos.
+    \item \textbf{Electrónica:} electrónica análoga y digital, sistemas embebidos, MATLAB.
+    \item \textbf{Lenguajes:} C, C++, Python, C\# (.NET), Java, SQL.
+    \item \textbf{Monitoreo y datos operacionales:} \textbf{SQL sobre Oracle}, PostgreSQL (JSONB, series históricas), Tableau, Power BI, Looker Studio, Pandas, dashboards de KPIs (Chart.js), streaming en tiempo real (SSE).
+    \item \textbf{Visión por computador:} OpenCV, MediaPipe (procesamiento de video y extracción de métricas).
+    \item \textbf{Infraestructura:} Linux, Docker y Docker Compose, SSH/servidores remotos, nginx, CI/CD (Azure DevOps, GitHub Actions).
+\end{itemize}
+
+%--- EXPERIENCIA ---
+\section{EXPERIENCIA PROFESIONAL}
+
+\textbf{Desarrollador de Software} \hfill \textbf{2025 -- Presente} \\
+\textit{SASOFTCO} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Creador de una plataforma de análisis documental con IA} (\textbf{en producción}), desarrollada desde cero: backend FastAPI (Python 3.11), 120+ endpoints REST/SSE y PostgreSQL 15 como fuente única de verdad.
+    \item \textbf{Procesamiento en tiempo real y por lotes}: streaming de progreso vía SSE, procesamiento concurrente con semáforos asíncronos y control de carga sobre servicios externos con reintentos y backoff exponencial.
+    \item \textbf{Monitoreo y KPIs}: tableros de indicadores y metas con visualizaciones Chart.js; alertas y notificaciones automatizadas por correo.
+    \item \textbf{Operación de infraestructura}: 8 servicios orquestados con Docker Compose (incluye microservicio C\#/.NET), healthchecks, backups automáticos de base de datos cada 24h y autorecuperación de contenedores; despliegues remotos por SSH en servidores Linux.
+\end{itemize}
+
+\textbf{Desarrollador / Analista de Datos} \hfill \textbf{2024 -- 2025} \\
+\textit{Btilink SAS} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Analista de datos de operación petrolera para Aera Energy LLC} (compañía petrolera de California, EE.UU.): consultas \textbf{SQL sobre bases de datos Oracle} para extraer y consolidar información del proceso productivo.
+    \item Dashboards y reportes en \textbf{Tableau y Power BI} sobre \textbf{volúmenes de producción, ingresos y salidas}, utilizados por varios equipos para el \textbf{monitoreo continuo de la operación} y el seguimiento de indicadores del proceso.
+\end{itemize}
+
+%--- PROYECTOS ---
+\section{PROYECTOS ACADÉMICOS Y TÉCNICOS}
+\begin{itemize}
+    \item \textbf{Análisis de video con visión por computador}: sistema en Python (OpenCV, MediaPipe) que extrae métricas cuadro a cuadro y genera series de tiempo, con arquitectura de modelos intercambiables que opera sin GPU.
+    \item \textbf{Pipelines de adquisición y consolidación de datos}: automatización en Python (Pandas, openpyxl, Selenium) para extraer, normalizar y cargar datos desde fuentes externas a PostgreSQL, con visualización en Looker Studio.
+\end{itemize}
+
+%--- EDUCACIÓN ---
+\section{EDUCACIÓN}
+\textbf{Especialización en Ingeniería de Software} \hfill \textbf{2025 -- 2026} \\
+Universidad de los Llanos \\
+\textbf{Especialización en Instrumentación y Control Industrial} \hfill \textbf{2024 -- 2025} \\
+Universidad de los Llanos --- \textit{Modalidad de grado:} \textbf{Diplomado en Sistemas IoT y PLC} \\
+\textbf{Ingeniería Electrónica} \hfill \textbf{2018 -- 2024} \\
+Universidad de los Llanos
+
+%--- CERTIFICACIONES (descomentar y completar cuando tengas los datos) ---
+% \section{CERTIFICACIONES Y DISTINCIONES}
+% \begin{itemize}
+%     \item \textbf{Nombre de la certificación} -- Entidad emisora (Año).
+%     \item \textbf{Distinción académica:} promedio destacado, beca o reconocimiento.
+% \end{itemize}
+
+\end{document}

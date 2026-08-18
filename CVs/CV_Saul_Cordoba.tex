@@ -1,0 +1,90 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Saul Cordoba - CV},
+    pdfauthor={Saul Cordoba},
+    pdfsubject={Software Developer | Backend, DevOps \& AI Engineer},
+}
+
+\pagestyle{empty}
+\urlstyle{same}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+%--- HEADER ---
+\begin{center}
+    {\Huge \bfseries SAÚL CÓRDOBA} \\[3pt]
+    {\Large \textbf{Software Developer | Backend, DevOps \& AI Engineer}} \\[2pt]
+    Villavicencio, Colombia (Disponible para Trabajo Remoto / Relocalización) \\
+    (+57) 321 961 1182 | \href{mailto:sauleduardo1111@gmail.com}{sauleduardo1111@gmail.com} | \href{https://github.com/Garetetete}{GitHub: Garetetete} | \href{https://www.linkedin.com/in/saul-eduardo-cordoba-romero-13b5b72b6}{LinkedIn} | \textbf{Inglés:} B2
+\end{center}
+
+%--- PERFIL PROFESIONAL ---
+\section{PERFIL PROFESIONAL}
+\textbf{Ingeniero Electrónico} con doble posgrado: \textbf{Especialista en Instrumentación y Control Industrial} y \textbf{Especialista en Ingeniería de Software}. Desarrollador full-stack con foco en \textbf{backend (Python/FastAPI y C\#/.NET), DevOps y sistemas con Inteligencia Artificial generativa (IA / AI)}. \textbf{Diseñé y construí desde cero, en solitario y de extremo a extremo, una plataforma SaaS multi-tenant de análisis documental con Inteligencia Artificial, hoy en producción}: backend, frontend, modelo de datos e infraestructura, con 120+ endpoints REST/SSE y 8 servicios orquestados en Docker. Experiencia adicional en BI (Tableau/Power BI) para el sector petrolero de EE.UU.
+
+%--- HABILIDADES TÉCNICAS ---
+\section{HABILIDADES TÉCNICAS}
+\begin{itemize}
+    \item \textbf{Lenguajes:} Python, C\# (.NET), C, C++, Java, TypeScript/JavaScript, SQL, MATLAB.
+    \item \textbf{Backend \& Frontend:} FastAPI, .NET (Clean Architecture), Node/Express, Angular, React, microservicios, API gateways, SSE.
+    \item \textbf{DevOps \& Cloud:} Docker y Docker Compose, Linux, SSH/despliegue en servidores, nginx, Keycloak (OAuth2/OIDC), Azure DevOps, GitHub Actions, CI/CD, despliegue continuo.
+    \item \textbf{Inteligencia Artificial (IA / AI) y LLMs:} Vertex AI, Gemini, Google ADK (sistemas multiagente), APIs de Claude y OpenAI, RAG con embeddings y búsqueda semántica, salida estructurada, optimización de costos de inferencia.
+    \item \textbf{Datos \& BI:} SQL, Oracle, PostgreSQL (RLS, JSONB), SQL Server, MongoDB, Redis, Tableau, Power BI, Looker Studio, Pandas.
+    \item \textbf{Metodologías:} SDD (Spec-Driven Development), TDD, Clean Architecture.
+\end{itemize}
+
+%--- EXPERIENCIA ---
+\section{EXPERIENCIA PROFESIONAL}
+
+\textbf{Desarrollador de Software} \hfill \textbf{2025 -- Presente} \\
+\textit{SASOFTCO} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Creador de una plataforma SaaS de análisis documental con Inteligencia Artificial (IA / AI)} (\textbf{en producción}): la diseñé y desarrollé desde cero de extremo a extremo — FastAPI (Python 3.11), \textbf{120+ endpoints REST/SSE}, PostgreSQL 15 \textbf{multi-tenant con seguridad a nivel de fila (RLS)} y 8 servicios en Docker Compose, incluido un microservicio C\#/.NET.
+    \item \textbf{Inteligencia Artificial generativa y sistemas multiagente (AI/LLM)}: orquestación de agentes especializados sobre \textbf{Vertex AI y Gemini}, con salida estructurada en JSON y capa de abstracción multiproveedor (Gemini, Claude, OpenAI).
+    \item \textbf{Reducción superior al 50\% en costos de inferencia de IA}, mediante control de consumo, caché y tolerancia a fallos en entornos de inferencia distribuidos.
+    \item \textbf{Procesamiento asíncrono y en tiempo real}: streaming de progreso vía SSE, procesamiento por lotes con control de concurrencia y reintentos con backoff exponencial; ingesta automatizada desde APIs de datos abiertos gubernamentales.
+    \item Desarrollo backend y frontend en \textbf{microservicios .NET con Angular y React} para sector gobierno y asegurador, con BPMN en Camunda y n8n; monolito Java/Spring con integración SAP; pipelines CI/CD en Azure DevOps.
+    \item \textbf{Tecnologías usadas:} Inteligencia Artificial (IA/AI), LLM, Vertex AI, Gemini, Google ADK, Python, FastAPI, C\#/.NET, Angular, React, TypeScript, PostgreSQL, Docker, Keycloak, Azure DevOps, GitHub Actions.
+\end{itemize}
+
+\textbf{Desarrollador / Analista de Datos} \hfill \textbf{2024 -- 2025} \\
+\textit{Btilink SAS} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Analista de datos para Aera Energy LLC} (compañía petrolera de EE.UU.): consultas \textbf{SQL sobre bases de datos Oracle} para extraer y consolidar información de la operación petrolera.
+    \item Dashboards y reportes en \textbf{Tableau y Power BI} (volúmenes de producción, ingresos y salidas) utilizados por varios equipos para el \textbf{monitoreo continuo de la operación}.
+\end{itemize}
+
+%--- EDUCACIÓN ---
+\section{EDUCACIÓN}
+\textbf{Especialización en Ingeniería de Software} \hfill \textbf{2025 -- 2026} \\
+Universidad de los Llanos \\
+\textbf{Especialización en Instrumentación y Control Industrial} \hfill \textbf{2024 -- 2025} \\
+Universidad de los Llanos --- \textit{Modalidad de grado: Diplomado en Sistemas IoT y PLC} \\
+\textbf{Ingeniería Electrónica} \hfill \textbf{2018 -- 2024} \\
+Universidad de los Llanos
+
+%--- CERTIFICACIONES (descomentar y completar cuando tengas los datos) ---
+% \section{CERTIFICACIONES Y DISTINCIONES}
+% \begin{itemize}
+%     \item \textbf{Nombre de la certificación} -- Entidad emisora (Año).
+% \end{itemize}
+
+\end{document}

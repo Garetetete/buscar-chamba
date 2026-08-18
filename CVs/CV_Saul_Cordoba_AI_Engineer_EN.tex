@@ -1,0 +1,89 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Saul Cordoba - Resume - AI Engineer},
+    pdfauthor={Saul Cordoba},
+    pdfsubject={AI Engineer | LLM \& Multi-Agent Systems},
+}
+
+\pagestyle{empty}
+\urlstyle{same}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+%--- HEADER ---
+\begin{center}
+    {\Huge \bfseries SAÚL CÓRDOBA} \\[3pt]
+    {\Large \textbf{AI Engineer | LLM \& Multi-Agent Systems}} \\[2pt]
+    Villavicencio, Colombia (Open to Remote Work / Relocation) \\
+    (+57) 321 961 1182 | \href{mailto:sauleduardo1111@gmail.com}{sauleduardo1111@gmail.com} | \href{https://github.com/Garetetete}{GitHub: Garetetete} | \href{https://www.linkedin.com/in/saul-eduardo-cordoba-romero-13b5b72b6}{LinkedIn} | \textbf{English:} B2 | \textbf{Spanish:} Native
+\end{center}
+
+%--- SUMMARY ---
+\section{PROFESSIONAL SUMMARY}
+\textbf{AI Engineer} with LLM systems \textbf{running in production}. \textbf{I designed and built from scratch, solo and end to end, a multi-tenant SaaS platform for AI-powered document analysis}, featuring a multi-agent architecture on \textbf{Vertex AI/Gemini}, 120+ REST/SSE endpoints and a \textbf{50\%+ reduction in inference costs}. Hands-on experience with agent orchestration (Google ADK), a multi-provider abstraction layer (Gemini, Claude, OpenAI) and computer vision. Electronics Engineer with two postgraduate specializations (Industrial Instrumentation \& Control; Software Engineering).
+
+%--- SKILLS ---
+\section{TECHNICAL SKILLS}
+\begin{itemize}
+    \item \textbf{AI / LLMs:} Vertex AI, Gemini, Google ADK (multi-agent), Claude and OpenAI APIs, structured output (JSON schema), web-search grounding, native PDF processing, inference cost optimization.
+    \item \textbf{Computer Vision:} OpenCV, MediaPipe, emotion-recognition models (HSEmotion).
+    \item \textbf{Backend:} Python 3.11, FastAPI, SSE (real-time streaming), asyncio (concurrency control, parallel batch processing), C\# (.NET), SQLAlchemy.
+    \item \textbf{Data:} SQL, Oracle, PostgreSQL (multi-tenant RLS, JSONB), open data APIs (Socrata/SoQL), Pandas, web scraping with Selenium.
+    \item \textbf{DevOps:} Docker \& Docker Compose, Linux, Keycloak (OAuth2/OIDC), nginx, Azure DevOps, GitHub Actions, CI/CD.
+\end{itemize}
+
+%--- EXPERIENCE ---
+\section{PROFESSIONAL EXPERIENCE}
+
+\textbf{Software Developer} \hfill \textbf{2025 -- Present} \\
+\textit{SASOFTCO} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Creator of a SaaS platform for AI-powered document analysis} (\textbf{in production}): designed and built it from scratch end to end — backend, frontend, data model and infrastructure — on FastAPI (Python 3.11) with 120+ REST/SSE endpoints.
+    \item \textbf{Multi-agent architecture}: orchestrated specialized AI agents on \textbf{Vertex AI/Gemini}, with structured output via JSON schema, automated scoring and a fallback parser for non-conforming responses.
+    \item \textbf{Cut inference costs by over 50\%}: designed consumption-control strategies, context caching, cost-tiered model selection and fault-tolerant load balancing across distributed inference environments.
+    \item \textbf{Multi-provider abstraction layer}: a common adapter for Gemini, Claude, OpenAI and OpenAI-compatible endpoints, with secrets encrypted at rest and per-client credential resolution.
+    \item \textbf{AI product features}: automated generation and completion of DOCX/PDF documents with scanned-file detection and validation scoring; conversational chat with persisted history; data enrichment via web-search grounding.
+    \item \textbf{Multi-agent systems with Google ADK}: a coordinator running specialized agents in parallel on Vertex AI; deployed LibreChat on Vertex AI and authored an architecture proposal for a corporate assistant with cost governance and audit trails.
+\end{itemize}
+
+\textbf{Developer / Data Analyst} \hfill \textbf{2024 -- 2025} \\
+\textit{Btilink SAS} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Data analyst for Aera Energy LLC} (U.S. oil company, California): \textbf{SQL queries against Oracle} databases plus \textbf{Tableau and Power BI} dashboards covering production volumes, revenue and outflows, used by several teams for continuous operations monitoring.
+\end{itemize}
+
+%--- PROJECTS ---
+\section{SELECTED AI PROJECTS}
+\begin{itemize}
+    \item \textbf{Video emotion analysis}: FastAPI + OpenCV/MediaPipe/HSEmotion producing per-person emotion timelines and valence/arousal curves, with a webcam-synced reaction study; pluggable model architecture that runs without a GPU, CI via GitHub Actions.
+    \item \textbf{Automated document extraction}: Python/Selenium scraper over web portals with an AI filtering layer and bulk document download.
+\end{itemize}
+
+%--- EDUCATION ---
+\section{EDUCATION}
+\textbf{Postgraduate Specialization in Software Engineering} \hfill \textbf{2025 -- 2026} \\
+Universidad de los Llanos, Colombia \\
+\textbf{Postgraduate Specialization in Industrial Instrumentation \& Control} \hfill \textbf{2024 -- 2025} \\
+Universidad de los Llanos --- \textit{Capstone: Postgraduate Diploma in IoT Systems and PLC} \\
+\textbf{B.Sc. in Electronics Engineering} \hfill \textbf{2018 -- 2024} \\
+Universidad de los Llanos, Colombia
+
+\end{document}

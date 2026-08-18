@@ -1,0 +1,95 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Saul Cordoba - CV Fullstack DevOps},
+    pdfauthor={Saul Cordoba},
+    pdfsubject={Fullstack Engineer \& DevOps | .NET, Python, Angular/React, Docker, CI/CD},
+}
+
+\pagestyle{empty}
+\urlstyle{same}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=1.5pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+%--- HEADER ---
+\begin{center}
+    {\Huge \bfseries SAÚL CÓRDOBA} \\[3pt]
+    {\Large \textbf{Fullstack Engineer \& DevOps | .NET, Python, Angular/React, Docker, CI/CD}} \\[2pt]
+    Villavicencio, Colombia (Disponible para Trabajo Remoto / Relocalización) \\
+    (+57) 321 961 1182 | \href{mailto:sauleduardo1111@gmail.com}{sauleduardo1111@gmail.com} | \href{https://github.com/Garetetete}{GitHub: Garetetete} | \href{https://www.linkedin.com/in/saul-eduardo-cordoba-romero-13b5b72b6}{LinkedIn} | \textbf{Inglés:} B2
+\end{center}
+
+%--- PERFIL PROFESIONAL ---
+\section{PERFIL PROFESIONAL}
+\textbf{Desarrollador Fullstack con perfil DevOps}: construyo el producto y opero su infraestructura. \textbf{Diseñé, desarrollé y llevé a producción desde cero, en solitario y de extremo a extremo, una plataforma SaaS multi-tenant} con backend \textbf{FastAPI/Python} y microservicio \textbf{C\#/.NET}, 120+ endpoints REST/SSE y PostgreSQL con seguridad a nivel de fila — orquestada en \textbf{8 servicios Docker Compose} con Keycloak, nginx, backups automatizados y entornos QA/producción. Experiencia con \textbf{microservicios .NET + Angular} y pipelines \textbf{CI/CD en Azure DevOps y GitHub Actions}. Ingeniero Electrónico con doble especialización (Instrumentación y Control Industrial; Ingeniería de Software).
+
+%--- HABILIDADES TÉCNICAS ---
+\section{HABILIDADES TÉCNICAS}
+\begin{itemize}
+    \item \textbf{Lenguajes:} C\# (.NET), Python, TypeScript/JavaScript, Java, C, C++, SQL.
+    \item \textbf{Backend \& Frontend:} .NET Core (Clean Architecture), FastAPI, Node/Express, microservicios, API gateways, SSE, Angular, React, TailwindCSS.
+    \item \textbf{Contenedores y despliegue:} Docker y Docker Compose multi-entorno (dev/QA/test), healthchecks, autoheal, límites de recursos, nginx (reverse proxy), Linux, SSH/despliegue remoto en servidores, Railway.
+    \item \textbf{CI/CD:} Azure DevOps Pipelines, GitHub Actions, despliegue continuo, quality gates (ruff, pytest), scripting PowerShell/Bash.
+    \item \textbf{Bases de datos y seguridad:} PostgreSQL (RLS, JSONB, migraciones, backups pg\_dump), Oracle, SQL Server, MongoDB, Redis, Keycloak (OAuth2/OIDC), JWT, cifrado de secretos (Fernet).
+    \item \textbf{Metodologías:} SDD (Spec-Driven Development), TDD, Clean Architecture, OpenSpec.
+\end{itemize}
+
+%--- EXPERIENCIA ---
+\section{EXPERIENCIA PROFESIONAL}
+
+\textbf{Desarrollador de Software} \hfill \textbf{2025 -- Presente} \\
+\textit{SASOFTCO} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Creador de una plataforma SaaS de análisis documental con IA} (\textbf{en producción}): la construí completa desde cero — backend FastAPI (Python 3.11) por capas, \textbf{120+ endpoints REST/SSE}, frontend server-rendered (Jinja2 + JS modular) y microservicio \textbf{C\#/.NET (Clean Architecture)} para conversión de documentos.
+    \item \textbf{PostgreSQL 15 multi-tenant con seguridad a nivel de fila (RLS)}: middleware que resuelve el cliente por request, migraciones versionadas y cifrado de secretos en reposo; \textbf{Keycloak (OAuth2/OIDC)} con validación JWT y permisos por vista.
+    \item \textbf{Operación de la plataforma}: orquestación de \textbf{8 servicios con Docker Compose} (API, .NET, LibreOffice headless, nginx, Keycloak, PostgreSQL, backups, autoheal), healthchecks dependientes, entornos separados dev/QA/test, backups automáticos cada 24h con retención de 14 días y scripts de operación en PowerShell/Bash.
+    \item \textbf{Integraciones}: consumo de APIs de datos abiertos gubernamentales (Socrata/SoQL) con paginación y control de errores, APIs comerciales, almacenamiento configurable en la nube (OneDrive/SharePoint, Google Drive) y notificaciones por Gmail OAuth.
+    \item Desarrollo backend y frontend en \textbf{microservicios .NET con Angular y React} para plataformas de trámites ciudadanos y sector asegurador; \textbf{pipelines CI/CD en Azure DevOps y GitHub Actions}; despliegues remotos por SSH en servidores Linux.
+\end{itemize}
+
+\textbf{Desarrollador / Analista de Datos} \hfill \textbf{2024 -- 2025} \\
+\textit{Btilink SAS} \hfill \textit{Villavicencio, Colombia}
+\begin{itemize}
+    \item \textbf{Analista de datos para Aera Energy LLC} (compañía petrolera de EE.UU.): consultas \textbf{SQL sobre Oracle} y dashboards en \textbf{Tableau/Power BI} sobre volúmenes de producción, ingresos y salidas, usados por varios equipos para el monitoreo continuo de la operación.
+\end{itemize}
+
+%--- PROYECTOS ---
+\section{PROYECTOS DESTACADOS}
+\begin{itemize}
+    \item \textbf{Sistema de ticketing QR} (Laravel 10 + PostgreSQL, dockerizado): tickets firmados, pagos con webhooks, control de aforo y validación anti doble ingreso.
+\end{itemize}
+
+%--- EDUCACIÓN ---
+\section{EDUCACIÓN}
+\textbf{Especialización en Ingeniería de Software} \hfill \textbf{2025 -- 2026} \\
+Universidad de los Llanos \\
+\textbf{Especialización en Instrumentación y Control Industrial} \hfill \textbf{2024 -- 2025} \\
+Universidad de los Llanos --- \textit{Modalidad de grado: Diplomado en Sistemas IoT y PLC} \\
+\textbf{Ingeniería Electrónica} \hfill \textbf{2018 -- 2024} \\
+Universidad de los Llanos
+
+%--- CERTIFICACIONES (descomentar y completar cuando tengas los datos) ---
+% \section{CERTIFICACIONES Y DISTINCIONES}
+% \begin{itemize}
+%     \item \textbf{Nombre de la certificación} -- Entidad emisora (Año).
+%     \item \textbf{Distinción académica:} promedio destacado, beca o reconocimiento.
+% \end{itemize}
+
+\end{document}

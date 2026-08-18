@@ -1,0 +1,30 @@
+# Proyectos con repositorio propio — no van aquí
+manukora-sop-briefing/
+rag-doc-assistant/
+
+# CV de otra persona: sus datos, no míos
+CVs/CV_Rony_Trespalacios.tex
+
+# Configuración local de la herramienta: nombra rutas y clientes internos
+.claude/
+
+# Artefactos de compilación de LaTeX
+*.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.toc
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Nunca
+.env
+.env.*
+*.pem
+*.key
