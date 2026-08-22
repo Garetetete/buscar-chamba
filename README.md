@@ -32,7 +32,10 @@ Dos proyectos que tienen repositorio propio y quedan excluidos por `.gitignore`:
 
 ## Reglas que se aplican en cada postulación
 
-**Expectativa salarial, según el esquema de contrato:**
+**Piso: USD 1.500** (decisión del 22 de agosto de 2026). No se descarta una vacante por pagar
+poco, solo por no encajar.
+
+**Qué pedir cuando preguntan** — el piso es lo que acepta, no la primera cifra que da:
 
 | Esquema | Pedir |
 |---|---|
@@ -40,7 +43,8 @@ Dos proyectos que tienen repositorio propio y quedan excluidos por `.gitignore`:
 | Rol Senior, contrato laboral | USD 3.000 |
 | Prestación de servicios | USD 3.300–3.500 |
 
-Preguntar el esquema **antes** de dar un número. Dar rango, no número único.
+Preguntar el esquema **antes** de dar un número. Dar rango, no número único. Si el aviso ya publica
+rango, pedir dentro de él.
 
 **Confidencialidad (SASOFTCO, otrosí 003).** Nunca mencionar el nombre interno de la plataforma,
 el dominio de negocio, la receta de optimización de costos ni la descomposición interna del
