@@ -11,6 +11,7 @@ Réplica **sintética** del flujo SolarWinds → service desk: nada del cliente 
 | `test_demo.py` | Prueba de punta a punta, 46 verificaciones |
 | `build_workflows.py` | Genera los tres JSON (por si hay que cambiar algo y regenerar) |
 | `levantar_demo.ps1` | Levanta todo en un PC nuevo con un solo comando |
+| `demo_alertas.ps1` | Limpia los datos y manda las 3 alertas del video (`-Pausa` para ir con Enter) |
 
 ## Verificado (7 nov 2026, n8n 2.46.6 en Docker)
 
