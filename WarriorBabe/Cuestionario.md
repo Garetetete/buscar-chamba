@@ -42,7 +42,7 @@ Formato: 20–30 min de preguntas escritas + video de 2–4 min (el enlace va de
 
 Datos de Saúl (7 nov): webhook de SolarWinds → reglas que deciden si se registra y qué tipo de alerta → consulta al servicio interno (fuente de verdad, alimenta un dashboard) → crea ticket en Aranda o actualiza el existente. **Supuesto sin confirmar:** el monitoreo con el historial de ejecuciones de n8n y volver a correr las fallidas. También falta confirmar si lo construyó él solo.
 
-> **Context.** At work, for an insurance client, our team built an n8n workflow that turned infrastructure alerts into service-desk tickets without creating duplicates.
+> **Context.** At work, for an insurance client, our team built an n8n workflow that turned infrastructure alerts into service-desk tickets without creating duplicates. I helped in every phase, from the design to getting it running.
 >
 > **Trigger.** A webhook that received alerts from SolarWinds: server, database and other infrastructure metrics.
 >
@@ -81,6 +81,6 @@ Datos de Saúl (7 nov): webhook de SolarWinds → reglas que deciden si se regis
 
 ### n8n workflow
 
-> Built with my team for an insurance client: a webhook received SolarWinds alerts (servers, databases). Business rules decided whether to register each alert and its type. The workflow then checked our internal service, which was the source of truth and fed a dashboard, for an existing ticket. If there was none, it created one in Aranda Service Desk with severity and details; if there was one, it updated it.
+> Built with my team for an insurance client, and I helped in every phase: a webhook received SolarWinds alerts (servers, databases). Business rules decided whether to register each alert and its type. The workflow then checked our internal service, which was the source of truth and fed a dashboard, for an existing ticket. If there was none, it created one in Aranda Service Desk with severity and details; if there was one, it updated it.
 >
 > Monitoring: failed runs showed up in n8n's execution history, and I fixed the cause and re-ran them. Re-running was safe because the workflow always checked the source of truth first, so repeated alerts never created duplicate tickets.

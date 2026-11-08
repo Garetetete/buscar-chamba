@@ -29,7 +29,8 @@ Hablar como a un gerente: problema → qué hice → qué pasó. Sin jerga innec
 > monitor servers and databases, and Aranda as their service desk. When something went wrong, a
 > person had to turn the alert into a ticket by hand.
 >
-> Our team built an n8n workflow for that, and I worked on it [MI PARTE]. SolarWinds sends the alert to a webhook. Business rules decide
+> Our team built an n8n workflow for that, and I helped in every phase, from the
+> design to getting it running. SolarWinds sends the alert to a webhook. Business rules decide
 > whether it deserves a ticket at all and what type of alert it is. Then the workflow either
 > creates the ticket in Aranda or updates the one that already exists.
 >
@@ -74,7 +75,9 @@ Hablar como a un gerente: problema → qué hice → qué pasó. Sin jerga innec
   se logró la reducción:** es confidencial.
 - **El resultado del flujo de n8n** ("one ticket per incident… without anyone retyping them"):
   debe ser cierto tal cual. Si antes no lo hacían a mano, cambiarlo.
-- **Flujo de n8n en equipo (confirmado 7 nov):** falta llenar [MI PARTE] con lo que hizo Saúl.
+- **Flujo de n8n en equipo (confirmado 7 nov):** Saúl ayudó en todas las fases. Si preguntan qué
+  hizo él, tener a mano un ejemplo concreto de cada fase (reglas, consulta a la fuente de verdad,
+  integración con Aranda).
 
 ## No decir
 
