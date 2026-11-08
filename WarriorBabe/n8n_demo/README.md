@@ -12,6 +12,7 @@ Réplica **sintética** del flujo SolarWinds → service desk: nada del cliente 
 | `build_workflows.py` | Genera los tres JSON (por si hay que cambiar algo y regenerar) |
 | `levantar_demo.ps1` | Levanta todo en un PC nuevo con un solo comando |
 | `demo_alertas.ps1` | Limpia los datos y manda las 3 alertas del video (`-Pausa` para ir con Enter) |
+| `levantar_demo.sh`, `demo_alertas.sh` | Lo mismo para Linux o macOS (`bash levantar_demo.sh`, `bash demo_alertas.sh --pausa`) |
 
 ## Verificado (7 nov 2026, n8n 2.46.6 en Docker)
 
@@ -90,6 +91,9 @@ Con Docker Desktop abierto, desde esta carpeta:
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\levantar_demo.ps1
 ```
+
+En **Linux**: `bash levantar_demo.sh` (necesita Docker y curl; si Docker dice *permission denied*,
+correrlo con `sudo` o agregar el usuario al grupo `docker`). Luego `bash demo_alertas.sh`.
 
 Crea el contenedor, importa y publica todo, reinicia y deja los datos limpios (probado el 7 nov en un
 contenedor nuevo). Si el contenedor ya existe, solo lo enciende y limpia los datos. Lo mismo a mano:
