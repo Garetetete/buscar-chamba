@@ -55,7 +55,20 @@ if (docker ps -a --format "{{.Names}}" | Where-Object { $_ -eq $Name }) {
     Wait-N8n
 }
 
-Invoke-RestMethod -Method Post -Uri "http://localhost:$Port/webhook/mock/reset" | Out-Null
+# n8n responde a /healthz antes de registrar los webhooks; en un PC lento eso tarda.
+# Se reintenta el reset hasta que los flujos esten cargados (maximo 3 minutos).
+Write-Host "Esperando a que carguen los flujos..."
+$ready = $false
+for ($i = 0; $i -lt 90; $i++) {
+    try {
+        Invoke-RestMethod -Method Post -Uri "http://localhost:$Port/webhook/mock/reset" -TimeoutSec 5 | Out-Null
+        $ready = $true
+        break
+    } catch { Start-Sleep -Seconds 2 }
+}
+if (-not $ready) {
+    throw "Los flujos no cargaron. Abre http://localhost:$Port y revisa que los dos flujos esten publicados (Published), o mira: docker logs $Name"
+}
 Write-Host ""
 Write-Host "Listo. Abre http://localhost:$Port (la primera vez pide crear una cuenta local)."
 Write-Host "Datos de la demo limpios: la primera alerta crea ARD-1001."
