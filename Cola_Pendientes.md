@@ -1,7 +1,17 @@
 # Cola de postulación — pendientes de enviar
 
-> Actualizado: 30 de octubre de 2026. Solo quedan los barridos de las últimas dos semanas; lo
+> Actualizado: 8 de noviembre de 2026. Solo quedan los barridos de las últimas dos semanas; lo
 > anterior está en `Archivo/Cola_Pendientes_hasta_2026-10-05.md`.
+
+## Nuevas del barrido del 8 de noviembre — ver `Vacantes_2026-11-08.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Five9 — Systems Integration Engineer II** · Colombia · 99 post. | https://co.linkedin.com/jobs/view/4469612367 | Integraciones en Python con APIs, manejo de fallos, runbook y reportes · **2–4 años** · confirmar remoto |
+| **CritPath — Founding Full-Stack (contract-to-hire)** · **USD 3.000/mes** | https://wellfound.com/jobs/5008746-founding-full-stack-engineer-contract-to-hire | Resumen con IA que nunca inventa cifras (igual a Manukora) · FastAPI, Postgres, React · nota con 5 preguntas · ⚠️ Wellfound dice solo EE. UU.: preguntar |
+| **Improving — Full-Stack (React + Python)** · remoto AR/CO/MX/CR · 5 post. | https://www.getonbrd.com/jobs/programming/full-stack-software-engineer-react-python-improving-remote | Python dentro de una app React existente · sin años explícitos · etiqueta Senior |
+| **Mint Data — Web Scraping Developer** · 100 % remoto · 170 post. | https://co.linkedin.com/jobs/view/4488084490 | Scrapers en Python + Claude/Cursor a diario · 2+ años · B2 |
+| **Bridgenext — AI Engineer (GenAI) / Full Stack AWS + LLM / Agentic Engineer** · remoto Colombia | CV a victoria.guala@bridgenext.com | Tres vacantes de IA abiertas a Colombia · decir a cuál aplica y preguntar años y salario |
 
 ## Nuevas del barrido del 5 de noviembre — ver `Vacantes_2026-11-05.md`
 
