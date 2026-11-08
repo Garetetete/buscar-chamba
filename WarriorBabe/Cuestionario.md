@@ -84,3 +84,48 @@ Datos de Saúl (7 nov): webhook de SolarWinds → reglas que deciden si se regis
 > Built with my team for an insurance client, and I helped in every phase: a webhook received SolarWinds alerts (servers, databases). Business rules decided whether to register each alert and its type. The workflow then checked our internal service, which was the source of truth and fed a dashboard, for an existing ticket. If there was none, it created one in Aranda Service Desk with severity and details; if there was one, it updated it.
 >
 > Monitoring: failed runs showed up in n8n's execution history, and I fixed the cause and re-ran them. Re-running was safe because the workflow always checked the source of truth first, so repeated alerts never created duplicate tickets.
+
+## Escenarios (7 nov, a partir de las ideas de Saúl)
+
+### Scenario 1: Design a knowledge-base agent
+
+> **Finding information.** Connect the sources (Google Drive or any system with an API) and index them for RAG: split documents into chunks, store embeddings with metadata (source, owner, last-modified date), and retrieve the most relevant chunks for each question. The agent answers only from what it retrieved and cites the document for every claim.
+>
+> **Keeping it current.** A scheduled sync (or Drive change notifications) re-indexes edited files and removes deleted ones. When two sources conflict, the agent prefers the most recent or the owner-approved one, shows both, and flags the conflict to the document owner.
+>
+> **When there's no reliable answer.** It says so plainly ("I couldn't find this in the documentation") and never guesses. It hands the question to the right person with the context, and every unanswered question goes into a log that shows which docs are missing.
+>
+> **Assessing quality.** A test set of real questions with expected answers, written with the department, scored on correctness, citation accuracy and correct refusals. In production, thumbs up/down plus a weekly review of unanswered and low-rated questions.
+>
+> **Before launch,** I'd test the questions the docs do cover, the ones they don't (it must refuse), conflicting documents, a freshly edited document, and permissions, so nobody gets answers from documents they can't access.
+>
+> I built a version of this: https://github.com/Garetetete/rag-doc-assistant (RAG with verifiable citations that refuses to make things up).
+
+### Scenario 2: Find and measure an opportunity
+
+> **Understand first.** I'd sit with the people who do it and watch it once, then ask: how often does it happen, how long does each run take, how many people do it, and where do mistakes happen? What systems are involved, and do they have an API? What happens downstream when there's an error? Automation is worth it when time per run × frequency × people, plus the cost of errors, clearly exceeds the cost to build and maintain it.
+>
+> **Example.** Teachers in Colombia type every student's grades into the school platform by hand. A practical solution: the teacher takes a photo of the grade sheet, a vision model extracts each name and grade, and the teacher reviews a pre-filled table and approves it before anything is submitted. The model does the typing; the human still does the checking. Low-confidence readings are highlighted, and the original photo is stored for audit.
+>
+> **Baseline.** Before building, time the manual process for a week or two and count the corrections made after submission.
+>
+> **Measuring:**
+> - **Time saved:** time per upload before vs. after (photo + review).
+> - **Adoption:** the share of grade uploads that go through the bot, and who stops using it, and why.
+> - **Problem solved:** fewer corrections after submission, and teachers saying the task no longer eats their week.
+>
+> **Assumptions:** the platform accepts uploads by API or form automation, and the sheets are readable. I'd validate both with a small pilot before scaling.
+
+### Scenario 3: Partial failure, rate limit and duplicates in n8n
+
+> **Investigate.** In the execution history, find the failed run and the exact node, then read the 429 response: which limit was hit, and is there a Retry-After header? Check whether several executions ran at the same time (a burst of events, or a manual re-run on top of an automatic retry). That usually explains both the rate limit and the duplicates.
+>
+> **Recover safely.** Don't re-run the whole workflow: the first write already succeeded. Check what each system actually holds for that event ID, then retry only the failed update once the rate limit resets.
+>
+> **Prevent duplicates.** Make every step idempotent with the event ID as the key: before creating, look it up; if it exists, update instead of insert (or use an upsert if the API supports it). That makes any re-run safe. My team used this exact pattern at work: an n8n flow that checked our source-of-truth service before creating or updating a ticket in Aranda.
+>
+> **Handle the rate limit.** Turn on Retry on Fail with increasing waits, respect Retry-After, and batch events with a Wait node when they come in bursts.
+>
+> **Verify.** Confirm both systems have exactly one matching record for the event ID. For bulk recoveries, run a reconciliation query that compares the two systems.
+>
+> **Monitoring and documentation.** An Error Trigger workflow that alerts the team with the event ID and the failed step, a final node that logs the outcome of every run, and a short runbook explaining how to recover a partial failure without creating duplicates.
