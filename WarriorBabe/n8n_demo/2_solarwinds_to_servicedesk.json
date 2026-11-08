@@ -1,0 +1,665 @@
+{
+  "id": "wbSolarwindsFlow",
+  "name": "Webhook: create service desk tickets from SolarWinds alerts",
+  "description": "Turns SolarWinds alerts into service desk tickets without duplicates. Business rules decide which alerts deserve a ticket, and the source of truth decides whether to create a new ticket or update the open one, so re-sending an alert is always safe. Synthetic demo: the downstream systems are mocked.",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "solarwinds-alert",
+        "responseMode": "responseNode",
+        "options": {},
+        "authentication": "headerAuth"
+      },
+      "id": "bfdb2471-0192-4df6-ad3c-12d0ec8fec33",
+      "name": "Receive SolarWinds alert",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "723bf724-6e27-4243-8a49-4eac2825f715",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "wbHeaderAuth0001",
+          "name": "SolarWinds webhook token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c9e8683d-4e73-4bad-a6b6-c2f7c7890077",
+              "leftValue": "={{ $json.body.NodeName }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "707924ff-8c42-4506-9054-f8fa50f5a2da",
+              "leftValue": "={{ $json.body.MetricName }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {},
+        "looseTypeValidation": true
+      },
+      "id": "f0d5abc7-faae-4613-b3b2-6ca9de3d02d1",
+      "name": "Is payload valid?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        256,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { error: \"validation_error\", message: \"NodeName and MetricName are required\" } }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "9c3c9581-5f0b-4cf9-aa00-f05414cf05e0",
+      "name": "Reject invalid payload",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "27d15662-8b9e-42a0-bc6a-b5bbe092c4f8",
+              "name": "node",
+              "value": "={{ $json.body.NodeName.trim() }}",
+              "type": "string"
+            },
+            {
+              "id": "c5841abd-52ed-4c32-a333-a033395c6467",
+              "name": "metric",
+              "value": "={{ $json.body.MetricName.trim() }}",
+              "type": "string"
+            },
+            {
+              "id": "1913f012-027a-4743-b643-da52924f2cd3",
+              "name": "value",
+              "value": "={{ $json.body.MetricValue }}",
+              "type": "number"
+            },
+            {
+              "id": "67c673ee-e019-4a31-9b7d-61b5f492b5b0",
+              "name": "threshold",
+              "value": "={{ $json.body.Threshold }}",
+              "type": "number"
+            },
+            {
+              "id": "bb6b063a-4d5a-4d67-a89f-3e9a5290b5ee",
+              "name": "severity",
+              "value": "={{ $json.body.Severity ?? 'Information' }}",
+              "type": "string"
+            },
+            {
+              "id": "a529107e-0cd5-413e-97da-f615952c6943",
+              "name": "message",
+              "value": "={{ $json.body.Message ?? '' }}",
+              "type": "string"
+            },
+            {
+              "id": "d3a7a8f4-43b3-4464-9992-2d073cd3f24f",
+              "name": "alertAt",
+              "value": "={{ $json.body.TriggeredAt ?? $now.toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "630d065f-bcfe-4d62-b136-0e6e270d4ba7",
+              "name": "priority",
+              "value": "={{ { Critical: 'P1', Warning: 'P2' }[$json.body.Severity] ?? '' }}",
+              "type": "string"
+            },
+            {
+              "id": "b9360178-3947-4a36-b23e-2034495a5937",
+              "name": "alertType",
+              "value": "={{ /down|status|ping/i.test($json.body.MetricName) ? 'Availability' : /disk|volume|storage/i.test($json.body.MetricName) ? 'Capacity' : /cpu|memory|ram|load/i.test($json.body.MetricName) ? 'Performance' : 'Other' }}",
+              "type": "string"
+            },
+            {
+              "id": "9032eff0-f664-4b6e-9425-e825f1e1b5d8",
+              "name": "dedupeKey",
+              "value": "={{ ($json.body.NodeName.trim() + '|' + $json.body.MetricName.trim()).toLowerCase() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f549d796-28ef-4c2f-a484-937b9959b6a3",
+      "name": "Map alert fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        720,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4dd868ba-cecc-412e-8e12-bb58cee89ca4",
+              "leftValue": "={{ $json.priority }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "5b4e45d3-f615-4eb3-a4cd-f808e5e73595",
+              "leftValue": "={{ $json.alertType === 'Availability' || $json.value >= $json.threshold }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6fd60642-b93c-4a67-a1d1-f92fe6599d39",
+      "name": "Needs a ticket?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        0
+      ],
+      "notes": "Critical or Warning only",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { outcome: 'ignored', reason: $json.priority ? 'Value is below the threshold' : 'Informational severity', dedupeKey: $json.dedupeKey } }}",
+        "options": {}
+      },
+      "id": "758fe550-1b4e-4f2d-9d26-ecb4c523a767",
+      "name": "Skip alert",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1168,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://localhost:5678/webhook/mock/sot/find",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "={{ $json.dedupeKey }}"
+            }
+          ]
+        }
+      },
+      "id": "a26f5e75-2358-4d23-81c4-1268bc873650",
+      "name": "Find open ticket",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1408,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput",
+      "notes": "Decides create vs. update",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4a68b498-d981-464c-a59a-f858809a54a2",
+              "leftValue": "={{ $json.found }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ffdff410-8a2e-4270-a109-0b0c2d4bf4a5",
+      "name": "Ticket already open?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1632,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/mock/aranda/update",
+        "options": {},
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "ticketId",
+              "value": "={{ $json.record.ticketId }}"
+            },
+            {
+              "name": "priority",
+              "value": "={{ $('Map alert fields').item.json.priority }}"
+            },
+            {
+              "name": "note",
+              "value": "=Repeated alert: {{ $('Map alert fields').item.json.metric }} = {{ $('Map alert fields').item.json.value }} (threshold {{ $('Map alert fields').item.json.threshold }}) at {{ $('Map alert fields').item.json.alertAt }}"
+            }
+          ]
+        }
+      },
+      "id": "8d99db11-973f-4fb5-a2c9-8214618a5dcd",
+      "name": "Add note to ticket",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1856,
+        -160
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/mock/aranda/create",
+        "options": {},
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "title",
+              "value": "=[{{ $('Map alert fields').item.json.priority }}] {{ $('Map alert fields').item.json.alertType }}: {{ $('Map alert fields').item.json.metric }} on {{ $('Map alert fields').item.json.node }}"
+            },
+            {
+              "name": "priority",
+              "value": "={{ $('Map alert fields').item.json.priority }}"
+            },
+            {
+              "name": "description",
+              "value": "={{ $('Map alert fields').item.json.message }} | value {{ $('Map alert fields').item.json.value }}, threshold {{ $('Map alert fields').item.json.threshold }}"
+            },
+            {
+              "name": "source",
+              "value": "SolarWinds"
+            }
+          ]
+        }
+      },
+      "id": "a73c818c-61f9-480e-921c-192b625140f0",
+      "name": "Create ticket in service desk",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1856,
+        160
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/mock/sot/upsert",
+        "options": {},
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "={{ $('Map alert fields').item.json.dedupeKey }}"
+            },
+            {
+              "name": "ticketId",
+              "value": "={{ $json.id }}"
+            },
+            {
+              "name": "alertType",
+              "value": "={{ $('Map alert fields').item.json.alertType }}"
+            },
+            {
+              "name": "priority",
+              "value": "={{ $('Map alert fields').item.json.priority }}"
+            },
+            {
+              "name": "alertAt",
+              "value": "={{ $('Map alert fields').item.json.alertAt }}"
+            }
+          ]
+        }
+      },
+      "id": "99d67487-cb0f-4541-8c45-05c23a1829f5",
+      "name": "Save ticket in source of truth",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2080,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { outcome: $json.isNewTicket ? 'created' : 'updated', ticketId: $json.record.ticketId, occurrences: $json.record.occurrences, dedupeKey: $json.record.key } }}",
+        "options": {}
+      },
+      "id": "3f2818aa-ceb7-4be9-8eee-0992740eec07",
+      "name": "Return ticket result",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2304,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { error: \"upstream_error\", message: \"Service desk or source of truth unavailable. The alert can be re-sent safely.\" } }}",
+        "options": {
+          "responseCode": 502
+        }
+      },
+      "id": "4eca3dab-2f20-4da8-851a-206903bc36c0",
+      "name": "Return upstream error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2304,
+        384
+      ],
+      "notes": "Sanitized, safe to re-send",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "content": "### 1. Validate payload\nMissing fields get a 400.",
+        "width": 432,
+        "height": 448,
+        "color": 5
+      },
+      "id": "41783435-ec9b-445a-8b44-5f213eee4f0b",
+      "name": "Zone: validate payload",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        200,
+        -96
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 2. Apply business rules\nOnly real problems become tickets.",
+        "width": 656,
+        "height": 448,
+        "color": 5
+      },
+      "id": "b9be7f87-c309-46d5-91de-575b4cf334d5",
+      "name": "Zone: business rules",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        664,
+        -96
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 3. Create or update the ticket\nCheck the source of truth first, so nothing duplicates.",
+        "width": 1104,
+        "height": 800,
+        "color": 4
+      },
+      "id": "74faad72-07a2-4347-9c16-9d97bc857593",
+      "name": "Zone: ticket",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1352,
+        -256
+      ]
+    }
+  ],
+  "connections": {
+    "Receive SolarWinds alert": {
+      "main": [
+        [
+          {
+            "node": "Is payload valid?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is payload valid?": {
+      "main": [
+        [
+          {
+            "node": "Map alert fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reject invalid payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map alert fields": {
+      "main": [
+        [
+          {
+            "node": "Needs a ticket?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs a ticket?": {
+      "main": [
+        [
+          {
+            "node": "Find open ticket",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Skip alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find open ticket": {
+      "main": [
+        [
+          {
+            "node": "Ticket already open?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return upstream error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ticket already open?": {
+      "main": [
+        [
+          {
+            "node": "Add note to ticket",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create ticket in service desk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add note to ticket": {
+      "main": [
+        [
+          {
+            "node": "Save ticket in source of truth",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return upstream error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create ticket in service desk": {
+      "main": [
+        [
+          {
+            "node": "Save ticket in source of truth",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return upstream error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save ticket in source of truth": {
+      "main": [
+        [
+          {
+            "node": "Return ticket result",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return upstream error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "nodeGroups": [],
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    {
+      "name": "monitoring"
+    },
+    {
+      "name": "service desk"
+    },
+    {
+      "name": "demo"
+    }
+  ],
+  "active": false,
+  "pinData": {}
+}

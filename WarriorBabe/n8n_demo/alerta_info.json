@@ -1,0 +1,10 @@
+{
+  "AlertID": 9003,
+  "NodeName": "web-03",
+  "MetricName": "CPU Load",
+  "MetricValue": 95,
+  "Threshold": 90,
+  "Severity": "Information",
+  "Message": "Informational: CPU spike",
+  "TriggeredAt": "2026-11-07T10:10:00-05:00"
+}

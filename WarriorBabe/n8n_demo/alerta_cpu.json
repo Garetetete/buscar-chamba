@@ -1,0 +1,10 @@
+{
+  "AlertID": 9001,
+  "NodeName": "db-prod-01",
+  "MetricName": "CPU Load",
+  "MetricValue": 97,
+  "Threshold": 90,
+  "Severity": "Critical",
+  "Message": "CPU load above 90% for 5 minutes",
+  "TriggeredAt": "2026-11-07T10:00:00-05:00"
+}

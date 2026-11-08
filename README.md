@@ -13,12 +13,14 @@ Búsqueda de trabajo remoto de Saúl Eduardo Córdoba Romero — 2026.
 |---|---|
 | `Perfil_Saul_Cordoba.md` | **La fuente.** Experiencia, stack, formación, proyectos y las restricciones contractuales. Todo lo demás sale de acá |
 | `Postulaciones.md` | Seguimiento de las postulaciones enviadas: fecha, salario, qué se respondió, estado |
-| `Vacantes_YYYY-MM-DD.md` | Un archivo por barrido de búsqueda, con enlaces verificados |
+| `Cola_Pendientes.md` | Vacantes por postular de las últimas dos semanas, con enlace y motivo |
+| `Vacantes_YYYY-MM-DD.md` | Un archivo por barrido de búsqueda, con enlaces verificados (solo los recientes) |
 | `CVs/*.tex` | CVs en LaTeX, uno por perfil de puesto. Compilan en Overleaf |
-| `Entrevista_Manukora_Guion.md` | 22 preguntas con respuestas, cifras clave y frases de emergencia |
-| `Entrevista_Manukora_Decisiones.md` | Por qué se decidió cada cosa en la prueba práctica |
+| `Entrevista_AgenticSoftware_Guion.md` | Guion para la entrevista con IA de AGENTIC SOFTWARE (inglés) |
+| `Entrevista_Niuro_Tecnica.md` | Preguntas técnicas de integraciones en Python, con respuestas en inglés |
+| `Respuestas_Cribado_2026-09-12.md` | Respuestas largas reutilizables para formularios de cribado |
 | `LinkedIn_Perfil.md` | Titular, "Acerca de", aptitudes y checklist de configuración |
-| `Prueba_Manukora.md` | Análisis de los datos de la prueba práctica |
+| `Archivo/` | Barridos viejos (`Archivo/Vacantes/`), la cola hasta el 5 de octubre, el proceso de Manukora y documentos ya cerrados (Bia, Wonderlic, inventarios de agosto) |
 
 Los CVs son **ATS-first**: sin tablas, sin columnas, sin gráficos. Una sola columna, texto
 seleccionable. Compilar con pdfLaTeX.
@@ -51,8 +53,9 @@ el dominio de negocio, la receta de optimización de costos ni la descomposició
 sistema. Aplica a entrevistas, no solo a los CVs. La descripción aprobada es *"plataforma SaaS de
 análisis documental con IA"*, y los clientes se nombran **solo por sector** (gobierno y seguros).
 
-**Fecha de inicio:** la cláusula de exclusividad va hasta el **30 de agosto de 2026**. Negociar
-inicio en septiembre, y plantearlo **solo cuando salga el tema de oferta**.
+**Fecha de inicio:** el contrato con SASOFTCO se renovó hasta el **30 de noviembre de 2026**, pero
+puede retirarse cuando quiera. Disponibilidad: "on short notice" (unas dos semanas). Antes de firmar
+en otro lado, revisar si la renovación mantiene exclusividad, no competencia o preaviso.
 
 **React:** declarar ~1 año con precisión y compensar con Angular. No inflarlo.
 

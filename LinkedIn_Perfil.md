@@ -130,7 +130,7 @@ titular.
 AI Engineer, Full Stack Engineer, DevOps Engineer. Ubicación **Colombia** y activa **Remoto**.
 En modo privado no lo ve tu empleador actual.
 
-**Cambia la URL** de `saul-eduardo-cordoba-romero-13b5b72b6` a algo limpio como
+✅ **URL cambiada el 4 oct 2026 a `saul-cordoba-a2997427b`** (sin tildes). Antes se proponía algo como
 `linkedin.com/in/saulcordoba-dev`. La actual se ve a medio hacer.
 
 **Foto de perfil.** Sin foto, muchos reclutadores ni abren el perfil. No hace falta estudio: luz

@@ -1,0 +1,398 @@
+{
+  "id": "wbMockSystems001",
+  "name": "Webhook: mock source of truth and service desk",
+  "description": "Synthetic stand-ins for the internal source-of-truth service and the Aranda service desk, so the alert workflow can be demoed without real systems. State lives in workflow static data.",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "mock/sot/find",
+        "responseMode": "lastNode",
+        "options": {},
+        "responseData": "firstEntryJson"
+      },
+      "id": "8ff4c397-c2ac-4f6b-9ea0-d16e1f95aa66",
+      "name": "On find record",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "3cdc84bd-bf94-48c9-9583-c4b8f9e41634"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const sd = $getWorkflowStaticData('global');\nsd.sot = sd.sot || {};\nsd.desk = sd.desk || { seq: 1000, tickets: {}, outage: false };\n\nconst key = String($json.query.key || '').toLowerCase();\nconst record = sd.sot[key] || null;\nreturn { json: { found: record !== null, record } };"
+      },
+      "id": "1d6e6a3f-fd86-4ec3-b61a-f57780df30c0",
+      "name": "Look up record",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mock/sot/upsert",
+        "responseMode": "lastNode",
+        "options": {},
+        "responseData": "firstEntryJson"
+      },
+      "id": "eba1b44e-ad60-4651-9c3e-64ce51517af5",
+      "name": "On save record",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        192
+      ],
+      "webhookId": "ba3835df-a797-4ff8-a8a6-ffd51246a29d"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const sd = $getWorkflowStaticData('global');\nsd.sot = sd.sot || {};\nsd.desk = sd.desk || { seq: 1000, tickets: {}, outage: false };\n\nconst b = $json.body;\nconst key = String(b.key).toLowerCase();\nconst prev = sd.sot[key];\nconst isNewTicket = !prev || prev.ticketId !== b.ticketId;\nconst record = {\n  key,\n  ticketId: b.ticketId,\n  alertType: b.alertType,\n  priority: b.priority,\n  status: 'Open',\n  firstAlertAt: isNewTicket ? b.alertAt : prev.firstAlertAt,\n  lastAlertAt: b.alertAt,\n  occurrences: isNewTicket ? 1 : prev.occurrences + 1,\n};\nsd.sot[key] = record;\nreturn { json: { isNewTicket, record } };"
+      },
+      "id": "b6001588-aa82-4bfe-bbc9-bfec4150ddd7",
+      "name": "Upsert record",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mock/aranda/create",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "58cb43ac-dcbf-4ba7-8071-fbb292efe43f",
+      "name": "On create ticket",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        544,
+        0
+      ],
+      "webhookId": "a9c356eb-4b38-45e2-8abf-b7e5adbf9b56"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const sd = $getWorkflowStaticData('global');\nsd.sot = sd.sot || {};\nsd.desk = sd.desk || { seq: 1000, tickets: {}, outage: false };\n\nif (sd.desk.outage) {\n  return { json: { statusCode: 503, body: { error: 'service desk unavailable (simulated outage)' } } };\n}\nconst b = $json.body;\nsd.desk.seq += 1;\nconst id = 'ARD-' + sd.desk.seq;\nconst ticket = {\n  id,\n  title: b.title,\n  priority: b.priority,\n  description: b.description,\n  source: b.source,\n  status: 'Open',\n  createdAt: new Date().toISOString(),\n  updates: [],\n};\nsd.desk.tickets[id] = ticket;\nreturn { json: { statusCode: 200, body: ticket } };"
+      },
+      "id": "1f22c55f-07ef-41d3-94e4-705800bc3b37",
+      "name": "Create ticket",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json.body }}",
+        "options": {
+          "responseCode": "={{ $json.statusCode }}"
+        }
+      },
+      "id": "65bc2cf1-9887-49e1-91a8-f358b94162f7",
+      "name": "Return create result",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        992,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mock/aranda/update",
+        "responseMode": "lastNode",
+        "options": {},
+        "responseData": "firstEntryJson"
+      },
+      "id": "6a00e35a-2647-49d4-9957-0911f31a9f66",
+      "name": "On add note",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        544,
+        192
+      ],
+      "webhookId": "b95aedca-eda2-46c6-8754-9ce39adb74d3"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const sd = $getWorkflowStaticData('global');\nsd.sot = sd.sot || {};\nsd.desk = sd.desk || { seq: 1000, tickets: {}, outage: false };\n\nconst b = $json.body;\nconst ticket = sd.desk.tickets[b.ticketId];\nif (!ticket) {\n  return { json: { error: 'ticket not found', ticketId: b.ticketId } };\n}\nticket.updates.push({ at: new Date().toISOString(), note: b.note });\nticket.priority = b.priority;\nreturn { json: ticket };"
+      },
+      "id": "11d028da-dd9a-4cb8-8c40-cc4af7f366aa",
+      "name": "Append note",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "mock/state",
+        "responseMode": "lastNode",
+        "options": {},
+        "responseData": "firstEntryJson"
+      },
+      "id": "4eb77607-6447-4c2d-b7f8-6e562d133403",
+      "name": "On show state",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1328,
+        0
+      ],
+      "webhookId": "adc4f32f-1561-44df-8006-578f520be900"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const sd = $getWorkflowStaticData('global');\nsd.sot = sd.sot || {};\nsd.desk = sd.desk || { seq: 1000, tickets: {}, outage: false };\n\nconst tickets = Object.values(sd.desk.tickets);\nreturn { json: { serviceDeskTickets: tickets.length, outage: sd.desk.outage, sourceOfTruth: sd.sot, serviceDesk: tickets } };"
+      },
+      "id": "0b964116-130a-4e73-90e3-1ceb74431c93",
+      "name": "Read all data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1552,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mock/reset",
+        "responseMode": "lastNode",
+        "options": {},
+        "responseData": "firstEntryJson"
+      },
+      "id": "4998c525-e3d9-4c62-9184-b8c63caeb831",
+      "name": "On reset",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1328,
+        192
+      ],
+      "webhookId": "617eb5de-971f-4dbc-8fcd-ee35d4665484"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const sd = $getWorkflowStaticData('global');\nsd.sot = {};\nsd.desk = { seq: 1000, tickets: {}, outage: false };\nreturn { json: { reset: true } };"
+      },
+      "id": "9f7cde77-7069-435a-91c4-477bd899b634",
+      "name": "Clear demo data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1552,
+        192
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mock/outage",
+        "responseMode": "lastNode",
+        "options": {},
+        "responseData": "firstEntryJson"
+      },
+      "id": "0aab40aa-9532-480d-b5cb-4f79bb1f378c",
+      "name": "On toggle outage",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1328,
+        384
+      ],
+      "webhookId": "99cddc2d-c78c-49c2-b6d9-e6df2ec19c06"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const sd = $getWorkflowStaticData('global');\nsd.sot = sd.sot || {};\nsd.desk = sd.desk || { seq: 1000, tickets: {}, outage: false };\n\nsd.desk.outage = $json.body.on === true || $json.body.on === 'true';\nreturn { json: { outage: sd.desk.outage } };"
+      },
+      "id": "96fb353d-b899-447f-b82c-2a628a61f42f",
+      "name": "Set outage flag",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1552,
+        384
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### Source of truth (mock)\nOne record per alert key.",
+        "width": 432,
+        "height": 448,
+        "color": 5
+      },
+      "id": "188c92fa-0f2a-4639-aded-0605283f4d72",
+      "name": "Zone: source of truth",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -56,
+        -96
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### Service desk (mock)\nStands in for Aranda.",
+        "width": 656,
+        "height": 448,
+        "color": 4
+      },
+      "id": "795480ce-e589-4233-9656-8428a7d338c0",
+      "name": "Zone: service desk",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        488,
+        -96
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### Demo utilities\nInspect, reset, simulate an outage.",
+        "width": 432,
+        "height": 640,
+        "color": 7
+      },
+      "id": "7a302494-9f8f-4443-b52d-63e88407161e",
+      "name": "Zone: demo utilities",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1272,
+        -96
+      ]
+    }
+  ],
+  "connections": {
+    "On find record": {
+      "main": [
+        [
+          {
+            "node": "Look up record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On save record": {
+      "main": [
+        [
+          {
+            "node": "Upsert record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On create ticket": {
+      "main": [
+        [
+          {
+            "node": "Create ticket",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create ticket": {
+      "main": [
+        [
+          {
+            "node": "Return create result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On add note": {
+      "main": [
+        [
+          {
+            "node": "Append note",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On show state": {
+      "main": [
+        [
+          {
+            "node": "Read all data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On reset": {
+      "main": [
+        [
+          {
+            "node": "Clear demo data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On toggle outage": {
+      "main": [
+        [
+          {
+            "node": "Set outage flag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    {
+      "name": "demo"
+    },
+    {
+      "name": "mock"
+    }
+  ],
+  "active": false,
+  "pinData": {}
+}

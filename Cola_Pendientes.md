@@ -1,92 +1,148 @@
 # Cola de postulación — pendientes de enviar
 
-> Actualizado: 22 de agosto de 2026. **Todos los enlaces verificados hoy (HTTP 200).**
->
-> Este archivo reemplaza los `Vacantes_*.md` del 29 de julio al 18 de agosto, que se borraron.
-> Si hace falta alguno, está en el historial de git del repo `buscar-chamba`.
+> Actualizado: 30 de octubre de 2026. Solo quedan los barridos de las últimas dos semanas; lo
+> anterior está en `Archivo/Cola_Pendientes_hasta_2026-10-05.md`.
 
-## Con el texto ya escrito — solo copiar y pegar
-
-| Vacante | Enlace | Material listo |
-|---|---|---|
-| **Improving — Back-end AI Engineer / LLM Orchestration** · 8 postulantes | https://www.getonbrd.com/jobs/machine-learning-ai/backend-ai-engineer-python-llm-orchestration-improving-remote | Carta en inglés (ángulo BlueScope + formación industrial) |
-| **Niuro — Senior Full-Stack Integration Engineer** · USD 3.500–4.000 | https://www.getonbrd.com/jobs/programming/integration-engineer-full-stack-niuro-remote-4129 | Carta en español **y** en inglés (ángulo integración) |
-| **ElevateOS — AI Automation Engineer** · USD 1.500–2.000, 535 postulantes | https://www.getonbrd.com/jobs/programming/ai-automation-engineer-elevateos-remote | 4 de 5 respuestas · falta elegir el *business icon* |
-| **Improving — Python Engineer & ML Infrastructure** | https://www.getonbrd.com/jobs/sysadmin-devops-qa/python-engineer-ml-infrastructure-improving-remote | Carta escrita el 13 de agosto |
-| **2BRAINS — Full-Stack Developer (Next/Nest)** · USD 2.800–3.300 | https://www.getonbrd.com/jobs/programming/fullstack-developer-next-nest-2brains-remote | Carta + respuestas de cribado |
-
-## Sin filtro de años — la mejor ventana
+## Nuevas del barrido del 5 de noviembre — ver `Vacantes_2026-11-05.md`
 
 | Vacante | Enlace | Por qué |
 |---|---|---|
-| **AGENTIC SOFTWARE — Full-Stack Python/React IoT & EV** | https://co.linkedin.com/jobs/view/full-stack-software-engineer-python-react-%E2%80%93-iot-ev-platform-at-agentic-software-inc-4454162920 | *"Demonstrated ability counts far more than years of experience"* · nombra **Claude Code** · IoT y telemetría, donde su formación electrónica suma |
-| **Traffic Control — AI & Automation Specialist** | https://co.linkedin.com/jobs/view/ai-automation-specialist-%E2%80%94-apis-webhooks-custom-automations-at-traffic-control-advertising-4456154328 | *"Sin experiencia"* · *"This is more than a Zapier role"* |
-| **tusdatos.co — Desarrollador Web Scraping** | https://co.linkedin.com/jobs/view/desarrollador-web-scraping-at-tusdatos-co-4456327344 | *"Sin experiencia"* · ya construyó un scraper con Selenium |
-| **Movate — Full Stack Engineer Jr** | https://co.linkedin.com/jobs/view/full-stack-engineer-jr-at-movate-4455464857 | Dice **Jr** · .NET + React + Azure DevOps, su día a día |
-| **BairesDev — Python Backend (FastAPI & MongoDB)** | https://co.linkedin.com/jobs/view/python-backend-developer-fastapi-mongodb-remote-work-at-bairesdev-4455440819 | **Intermedio** · evalúan con prueba técnica, no con años |
-| **Solvd — Forward Deployed Engineer, Agentic AI** | https://co.linkedin.com/jobs/view/forward-deployed-engineer-%E2%80%93-agentic-ai-at-solvd-inc-4457028234 | **Intermedio** · GenAI y IA agéntica |
-| **Koa — Desarrollador Junior Implementación IA** | https://co.linkedin.com/jobs/view/desarrollador-junior-implementaci%C3%B3n-inteligencia-artificial-at-koa-compa%C3%B1%C3%ADa-de-financiamiento-4456311123 | Dice **Junior** · nombra **SDD** · ⚠️ pago bajo |
+| **Sermo (vía Scale Army) — Forward Deployed AI Engineer** · remoto EE. UU. y LATAM | https://www.remotefront.com/remote-jobs/scale-army-forward-deployed-ai-engineer-fpd4e | Agentes en producción con aprobación humana y evaluación · Python, .NET, React · español profesional · sin años en el post |
+| **Albert — New grad (AI) track** · remoto casi en cualquier lugar | correo a recruiting@albert.com | Python, Claude, Postgres, React · recién graduados que ya llevaron un LLM a usuarios reales |
+| **Global MVM — FullStack .NET/Angular/Azure** · remoto · primeros 25 | https://co.linkedin.com/jobs/view/4486788619 | Su stack · sin años · muro Azure |
+| **Uniandes — Ingeniero(a) de Calidad de Software e IA** · 90 post. | https://co.linkedin.com/jobs/view/4487753298 | Evaluación de IA generativa, inyección de prompts, alucinaciones · confirmar modalidad |
 
-## Reabiertas por el piso de USD 1.500 (22 de agosto)
+## Nuevas del barrido del 4 de noviembre — ver `Vacantes_2026-11-04.md`
 
-Estas se habían descartado **solo por salario**. Verificadas hoy, las tres siguen vivas.
-
-| Vacante | USD | Por qué vuelve |
+| Vacante | Enlace | Por qué |
 |---|---|---|
-| **Software Engineer — startup (vía LinkedIn)** · https://app.mappa.ai/jobs/3361-junior-software-engineer | **1.600** | **Pide "al menos 2 años"** — es el único aviso de todo el rastreo que pide exactamente su experiencia. TypeScript/JavaScript, Node, React o React Native, SQL. Remoto, tiempo completo |
-| **Jurispeed — Desarrollador Multi Agente IA** · https://www.getonbrd.com/jobs/programming/desarrollador-multi-agente-ia-jurispeed-remote | 1.000–1.500 | **Multiagente**, que es lo que construyó con Google ADK. Justo en el límite del piso |
-| **Back-end Engineer (stealth)** · https://www.getonbrd.com/jobs/programming/full-stack-product-engineer-stealth-seller-remote | 1.500–2.500 | 602 postulantes, así que la competencia es el problema, no el pago |
+| **LealUp — Founding Engineer** · remoto Colombia · 66 post. | https://co.linkedin.com/jobs/view/4485527681 | **Sin años formales** · FastAPI, PostgreSQL, React/Next, agentes con evals · prueba pagada de 1–3 días · preguntar salario fijo |
+| **Evaboot — Agentic Python Engineer** · remoto mundial · **USD 60–120K/año** | https://forms.gle/ALgZfzwpZU8UXvxg8 | Reabrió · "autodidacts welcome" · respuesta en ≤2 semanas · pide sesión de Google |
+| **MixRank (YC) — Junior Software Engineer** · remoto global | https://www.ycombinator.com/companies/mixrank/jobs/Fnwsojk-junior-software-engineer-remote-global-full-time | **0–3 años** · Python, PostgreSQL, Linux · destacar proyectos propios |
+| **karvio — Full-Stack Semi Senior AI-native** · remoto Colombia | https://www.linkedin.com/posts/faridsesin_hiring-estamoscontratando-ia-activity-7523510081913606145-7u2- | Mensaje directo al CTO (Farid Sesin) · Claude Code a diario · muro NestJS y 3 años |
+| **Search Latam — Full Stack con IA** · remoto Colombia | https://www.linkedin.com/posts/arhs86_buenos-d%C3%ADas-comunidad-estamos-buscando-en-activity-7523774417664053250-ITv1 | CV a mangel@searchlatam.com con vacante y aspiración salarial · sin años |
+| **Fundación delamujer — Analista de IA** · 60 post. | https://co.linkedin.com/jobs/view/4487019997 | LangChain/LangGraph, AWS/GCP · 2 años · confirmar modalidad |
+| **AfterQuery — Full Stack Engineer, AI Trainer** · USD 70–85/h | https://www.glassdoor.com/job-listing/j?jl=1010315225207 | Discutible · confirmar que aceptan Colombia |
 
-⚠️ **ElevateOS y Alluxi** también entran ahora sin asterisco: las dos pagan 1.500–2.000 y las dos
-ya tienen material escrito.
+## Nuevas del barrido con Apify del 2 de noviembre — ver `Vacantes_2026-11-02.md`
 
-## Búsqueda dirigida de nivel junior — 22 de agosto
-
-Barrido con el filtro de **nivel de experiencia** de LinkedIn (`f_E=1,2,3`: prácticas, entry,
-associate) y el inventario de Get on Board filtrado a **Junior y Semi Senior** con salario ≥ 1.500.
-Resultado honesto: **225 avisos revisados en LinkedIn, 29 en Get on Board, y solo uno nuevo sirve.**
-
-| Vacante | Enlace | Estado |
+| Vacante | Enlace | Por qué |
 |---|---|---|
-| **Addi — Backend Engineer IC2** | https://co.linkedin.com/jobs/view/backend-engineer-ic2-at-addi-4427352897 | ✅ **"Sin experiencia"** y **remoto**. Fintech colombiana grande. Ownership de punta a punta, pruebas unitarias/integración, revisión de PRs diaria, despliegues diarios con CI/CD, ADRs. ⚠️ **El muro es el stack JVM** (Java/Kotlin) — lo tiene en el CV pero no es su stack de producción |
+| **BuilderBot Pro — AI Builder (Claude Code, n8n)** · remoto LATAM · **USD 2.500–3.000** | https://builderbot.techfektor.com/ai-builder | Sin años · agentes que se arreglan solos, GoHighLevel, webhooks · ⚠️ Loom público de 2–3 min obligatorio |
+| **EPAM — AI Engineer, MCP Platform Governance** · 100 % remoto | https://careers.epam.com/en/vacancy/bltmtitqtemwvhxim5a_es | 2+ años · MCP, OAuth/OIDC, idempotencia, reintentos · muro AWS |
+| **Be.Change — Full Stack Senior React y Python** · 100 % remoto | https://join.com/companies/bechangeconsulting/16894030-desarrollador-a-full-stack-senior-react-y-python | FastAPI, PostgreSQL, SSO, GCP, IA · muro 3+ años |
+| **Shokworks — Full-Stack AI Developer** · COP 6–7,9 M | http://co.indeed.com/job/full-stack-ai-developer-a37ba71f19a1c537 | Python, RAG, agentes · AWS · salario bajo |
+| **Business Partner Consulting — Ingeniero IA Junior ("Desarrollador Claude")** · remoto · medio tiempo · **COP 4,5–6 M** | http://co.indeed.com/job/ingeniero-ia-junior-514b79e28339b0e0 | Apps con Claude, integraciones, calidad de respuestas · medio tiempo, sirve en paralelo · aviso corto: preguntar cliente y contrato |
+| **CaseWare — Software Developer in Test II** · remoto Colombia, indefinido | https://jobs.lever.co/caseware/8bbd85f4-bd8d-44d3-9879-8cb9d872fadf | Discutible · pruebas de sistemas agénticos · muro 2+ años en QA, Cypress/Pact/K6, AWS |
 
-**Descartadas, con el motivo:**
+## Nuevas del barrido del 1 de noviembre — ver `Vacantes_2026-11-01.md`
 
-| Vacante | Por qué no |
-|---|---|
-| **Marsh Risk — Analista Junior de automatización (Python)** | "Sin experiencia", pero **híbrido en Bogotá, 3 días en oficina** |
-| **Illumia — Conversational AI Developer** · Bogotá | Diseñar asistentes con IA generativa e integrar LLMs con APIs — encaja perfecto, pero es **híbrido/presencial** |
-| **Eurofins — Software Engineer "Mid"** | Dice Mid y pide **4+ años de stack Microsoft, 4+ de Angular y 4+ de SQL** |
-| **PayJoy — Software Development Engineer** | Marcada Intermedio pero pide **5+ años en fintech** y PHP/Vue/AngularJS |
-| **Brand Bot — Full-Stack AI** · USD 5.000–6.000 · Semi Senior | Residencia **solo Chile** |
-| BC Tecnología ×8 (Full-Stack Angular/Node, Python/Node, SRE, QA…) | Todas Semi Senior y elegibles, pero **ya tienen su CV tres veces sin una sola respuesta** |
-
-**Conclusión:** la vacante de USD 1.600 vía mappa.ai sigue siendo excepcional, y ahora se entiende
-por qué. Que un aviso sea **remoto + nivel junior/2 años + stack compatible** a la vez es raro: casi
-todo lo etiquetado junior en Colombia es presencial o híbrido en Bogotá, y casi todo lo remoto pide
-4 o 5 años. Bajar el piso a 1.500 abre poco en Get on Board; donde sí abre es en **portales propios
-de empresa**, que no publican salario ni contador.
-
-## Nombran Claude Code o su stack exacto — piden años
-
-| Vacante | Enlace | Muro |
+| Vacante | Enlace | Por qué |
 |---|---|---|
-| **CI&T — AI Engineer Senior (Claude Code)** | https://co.linkedin.com/jobs/view/ai-engineer-senior-claude-code-at-ci-t-4455581218 | Senior · ⚠️ **republican casi a diario con ID nuevo**; buscar el más reciente antes de postular |
-| **Grupo DEACERO — AI Agent Engineer (Python/GCP/LLM — MCP & Claude)** | https://co.linkedin.com/jobs/view/ai-agent-engineer-python-gcp-llm-%E2%80%94-mcp-claude-%C2%B7-remoto-colombia-at-grupo-deacero-4453996366 | Solo le falta MCP |
-| **FullStack — Agentic Software Engineer (Claude Code)** | https://co.linkedin.com/jobs/view/agentic-software-engineer-claude-code-remote-colombia-at-fullstack-4377042110 | Pendiente desde el 13 de agosto |
-| **Truelogic — Senior Full-Stack (.NET/Angular) GovTech** | https://jobs.ashbyhq.com/truelogic/fd49f0c7-396e-4179-8a4e-427b1ce851fb | 5+ años · pide Claude Code, LLMs, MCP y RAG · **ya está en su sistema** |
-| **Wizeline — Senior AI Agent Engineer** | https://www.wizeline.ai/careers/job?gh_jid=8139378 | 5+ años · acepta **inglés B2** · **ya está en su sistema** |
-| **Improving — Senior AI Research Engineer** | https://www.getonbrd.com/jobs/machine-learning-ai/senior-ai-research-engineer-improving-remote | 4+ años · Claude Agent SDK, MCP, evals |
-| **TTEC Digital — Agentic AI Engineer (Google ADK / GCP)** | https://co.linkedin.com/jobs/view/agentic-ai-engineer-google-adk-gcp-at-ttec-digital-4449696803 | Pide **2+ años** explícitamente · pendiente desde el 11 de agosto |
-| **Rockwell Automation — AI Engineer** | https://co.linkedin.com/jobs/view/ai-engineer-at-rockwell-automation-4454056999 | Única donde su formación industrial pesa · usar `CV_Saul_Cordoba_Industrial_Control` |
+| **WarriorBabe — AI Automation Specialist** · remoto · 25 post. | https://co.linkedin.com/jobs/view/4485687080 | Sin años · n8n + Claude + Python/JS, webhooks, reintentos, duplicados · contrato |
+| **Sapling — Founding AI Engineer** · **USD 4.500–7.000** · 81 post. | https://www.getonbrd.com/jobs/founding-ai-engineer-sapling-remote | Agentes para salud con evals y revisión humana · sin años · postulación rápida |
+| **Solvo Global — AI Engineer** · remoto · 87 post. | https://co.linkedin.com/jobs/view/4483482699 | Python, LLMs, RAG, agentes · muro 3+ años, hora del Pacífico |
+| **Solum Health (YC) — Founding Full Stack** · 145 post. | https://co.linkedin.com/jobs/view/4485910812 | FastAPI/Next.js, evals, Claude Code · ⚠️ semanas de 6 días, 10–12 h |
 
-## Discutibles
+## Nuevas del barrido del 30 de octubre — ver `Vacantes_2026-10-30.md`
 
-- **BC Tecnología — Full-Stack Developer AWS** · https://www.getonbrd.com/jobs/programming/full-stack-developer-aws-bc-tecnologia-remote — Node + Python + **Angular** + AWS. Respuestas de cribado ya escritas. Ya tienen su CV tres veces sin respuesta
-- **Alluxi — Full-Stack Python/React** · https://www.getonbrd.com/jobs/programming/desarrollador-full-stack-python-react-alluxi-remote-8b7d — pide **Django**, que no tiene. Carta escrita. USD 1.500–2.000, ahora dentro del piso
-- **Branding by Books — Senior Full-Stack** · USD 4.500–5.500 · **1 postulante** · exige **Claude Code y lo verifica en el proceso**, pero pide Node 4+ años y su política de ubicación se contradice con el texto del aviso
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Stefanini LATAM — Developer IA** · remoto · 160 post. | https://co.linkedin.com/jobs/view/4484102111 | Agentes en Python, streaming, timeouts, fallback, MCP · "3 años deseable" |
+| **Blueflowtech — Fullstack Engineer (Data Ingestion)** · **USD 3.000** · 195 post. | https://co.linkedin.com/jobs/view/4484483841 | Python/Node + PostgreSQL + OpenAPI + OAuth/webhooks · muro TS/React |
+| **MAS Global — AI Engineer** · remoto · 127 post. | https://co.linkedin.com/jobs/view/4484490220 | Plataformas de IA de punta a punta · TS + Python |
+| **Evolution Collect — Conversational AI QA** · **USD 2.900–3.200** · 26 post. | https://www.getonbrd.com/jobs/conversational-ai-qa-specialist-evolution-collect-llc-remote | Casi de entrada, evaluación de bots · no es desarrollo |
+| **NTT DATA — QA Engineer IA** · remoto · 105 post. | https://co.linkedin.com/jobs/view/4483869991 | Probar agentes LLM, RAG, MCP y tools: datasets, rúbricas, alucinaciones · muro 3 años |
+| **Universidad de los Andes — Ingeniero(a) de Calidad de Software e IA** · 200+ post. | https://co.linkedin.com/jobs/view/4481200962 | QA de chatbots con IA generativa, inyección de prompts · "1 a 3 años", acepta Ing. Electrónica |
+| **NTT DATA — QA Junior IA** · remoto · 200+ post. | https://co.linkedin.com/jobs/view/4483264444 | Pruebas no determinísticas de agentes · junior, salario probablemente bajo |
 
----
+## Nuevas del barrido del 27 de octubre — ver `Vacantes_2026-10-27.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Encora (Coforge) — Junior Applied AI Engineer (LLM Systems)** · LATAM remoto · 34 post. | https://co.linkedin.com/jobs/view/4484227720 | "1–3+ años" · Python + FastAPI, evals de agentes, guardrails, MCP · muro Bedrock/Langfuse |
+| **Customer.io — GTM AI Engineer** · remoto Américas · **USD 140–170 K/año** | https://job-boards.greenhouse.io/customerio/jobs/8055540 | Agentes de prototipo a producción en GCP, evals, AI-native · muro 4+ años |
+
+## Nuevas del barrido del 26 de octubre — ver `Vacantes_2026-10-26.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Giunti Psychometrics — Back End Developer** · remoto Colombia · **COP 7,7–9 M** · 169 post. | https://co.linkedin.com/jobs/view/4481431932 | Python + FastAPI + integraciones ERP/CRM · Laravel deseable |
+| **RappiPay — AI Engineer I** · 133 post. | https://co.linkedin.com/jobs/view/4481469114 | "0 a 2 años" · LLMs, RAG, tool calling, agentes · muro ML clásico |
+| **levelUp — Forward Deployed Engineer** · LatAm · USD | talent@hrlevel-up.com | **Por correo** · preguntar stack y salario |
+
+## Nuevas del barrido del 24 de octubre — ver `Vacantes_2026-10-24.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **JustInsurance — Senior AI Native Full-Stack** · remoto mundial · **USD 4.000–6.000** · 31 post. | https://www.getonbrd.com/jobs/machine-learning-ai/senior-ai-native-full-stack-software-engineer-justinsurance-llc-remote | Seguros + IA · "3 años o equivalente" · muro TS/React |
+| **Massive Bio — AI Developer** · **<25 post.** | https://co.linkedin.com/jobs/view/4482664142 | FastAPI + Pydantic + function calling + RAG + PostgreSQL · muro 3+ años |
+| **Bold Business — Python Dev (Automation, Integrations & Power BI)** · remoto LatAm | https://co.linkedin.com/jobs/view/4482384357 | "1–3 años" · Python + PostgreSQL + Power BI · reaviso: no repetir si ya postuló |
+
+## Nuevas del barrido del 23 de octubre — ver `Vacantes_2026-10-23.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Abstra — Mid Full-Stack (Python/FastAPI/React)** · remoto LatAm | https://himalayas.app/companies/abstra-co/jobs/mid-full-stack-engineer-python-fastapi-react | Agente con herramientas, extracción de documentos, evals, streaming · muro 3–5 años y React |
+| **Applaudo — Backend Developer (Python)** · 29 post. | https://co.linkedin.com/jobs/view/4482786197 | Sin años · FastAPI + SQLAlchemy + integraciones · muro Kubernetes y Celery |
+| **WeAre Dev — FullStack Spring Boot + Angular** · remoto Colombia | talento.humano@wearedev.co | **Por correo** · "2 a 3 años" · Angular + PostgreSQL |
+
+## Nuevas del barrido del 22 de octubre — ver `Vacantes_2026-10-22.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Resolv Global — Junior AI/ML Engineer** · remoto Colombia · **<25 post.** | https://co.linkedin.com/jobs/view/4481183338 | "1–3 años" · agentes con herramientas, RAG, APIs de LLM, voz y MCP deseables · postular a uno solo de los 7 avisos |
+| **Izo — AI & Automation Practitioner** · remoto LatAm · **<25 post.** | https://co.linkedin.com/jobs/view/4481398745 | n8n + prompts + APIs · en español · "2–4 años" |
+
+## Nuevas del barrido del 21 de octubre — ver `Vacantes_2026-10-21.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Global MVM — FullStack .NET / Angular / Azure / IA** · remoto · **<25 post.** | https://co.linkedin.com/jobs/view/4481153156 | Su stack · sin años · postular a uno solo de los 3 avisos |
+| **ElevenLabs — Full-Stack (Backend Leaning), Creative Agents** · remoto global | https://jobs.ashbyhq.com/elevenlabs/35813150-a851-4821-b732-a037b4e6c4fe | Sin años · agentes, evals, MCP · piden evidencia de productos propios |
+| **TRM Labs — Backend Engineer, Agent Tools (LATAM)** · USD 100–120K/año | https://jobs.ashbyhq.com/trm-labs/3500a697-6f75-42b9-ac08-a74fabf99558 | Integraciones para IA · 6 h de solape con PST · guardias |
+
+## Nuevas del barrido del 16 de octubre — ver `Vacantes_2026-10-16.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Praxis LATAM — Full Stack .NET Core + Angular** · remoto Colombia · USD · 27 post. | https://co.linkedin.com/jobs/view/4480565243 | Su stack exacto · **por correo** a j2.serna@staff.praxisglobe.com (CV + aspiración) · 3 años · sábados medio día |
+| **Keyrus — Forward Deployed AI Engineer** · **<25 post.** | https://co.linkedin.com/jobs/view/4480319000 | Sin años · integraciones + IA en producción con clientes |
+| **MILL5 — Full Stack Engineer (LatAm)** · 29 post. | https://co.linkedin.com/jobs/view/4480563483 | Sin años · .NET + TS + Azure · dice Senior |
+| **Supabase — AI Platform Engineer** · remoto global | https://jobs.ashbyhq.com/supabase/3b5d54ca-741b-45ac-bd3f-31605a0d3541 | Ambiciosa · piden describir un agente propio: su bot con Claude |
+
+## Nuevas del barrido del 14 de octubre — ver `Vacantes_2026-10-14.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **CGI — Mid-Level Full-Stack AI Engineer** · **<25 post.** · B2 | https://co.linkedin.com/jobs/view/4479594554 | "2+ años" · **Python + Angular + clasificación de documentos/OCR/chatbots** · muro Kubernetes · confirmar modalidad |
+| **Backblaze — Software Engineer, Open Source AI** · remoto Colombia · 99 post. | https://co.linkedin.com/jobs/view/4476058121 | Sin años · integraciones open source de IA con Claude Code, pytest y CI |
+| **Plutus21 — AI Engineer (evaluación y gobierno de agentes)** · 28 post. | https://co.linkedin.com/jobs/view/4476026209 | Sin años · evals, umbrales, controles en código · muro estadística · cuidar la cláusula |
+| **Talento — AI Engineer (Mid)** · remoto Colombia · 85 post. | https://co.linkedin.com/jobs/view/4479558446 | "2–3 años" LLM + agentes, Python + SQL, RAG · Snowflake preferido |
+
+## Barrido del 11 de octubre — ver `Vacantes_2026-10-11.md`
+
+Sin vacantes nuevas para postular (fin de semana). La más cercana: **Jeeves — AI Engineer** (extracción de facturas y conciliación, https://co.linkedin.com/jobs/view/4477210936), pero pide 7+ años.
+
+## Nuevas del barrido del 9 de octubre — ver `Vacantes_2026-10-09.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Crost AI — DevOps & AI Infrastructure** · remoto mundial · **USD 2.000–2.500** · **14 post.** | https://www.getonbrd.com/jobs/sysadmin-devops-qa/devops-ai-infrastructure-engineer-crost-ai-remote | Sin años · Docker, CI/CD, PostgreSQL + flujos con agentes de IA · inglés C1 · pedir 2.500 |
+| **HireLATAM — Remote AI Engineer (LLM Systems & Automation)** · **hasta USD 3.000** · 67 post. | https://co.linkedin.com/jobs/view/4475968657 | Sin años · elegir modelos, medir precisión/velocidad/costo, n8n |
+| **Keyrus — AI Engineer** · remoto MX/CO · **<25 post.** | https://co.linkedin.com/jobs/view/4477863810 | Sin años · RAG, agentes, evaluación y costos · etiquetado Senior |
+| **BCCT — Full-Stack Engineer, AI-Ready** · 61 post. | https://co.linkedin.com/jobs/view/4477862983 | "2+ años" · Cursor/Claude Code + specs antes de código · muro Node/TS |
+
+## Nuevas del barrido del 7 de octubre — ver `Vacantes_2026-10-07.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **THE CLEARPOINT AI — Full-Stack AI Native** · LatAm · contractor · **USD 2.200–3.000** · en español | https://www.getonbrd.com/jobs/machine-learning-ai/desarrollador-full-stack-ai-native-the-clearpoint-ai-remote-1fee | Sin años · agentes, function calling, Supabase, multi-tenant, bots de WhatsApp · solape con España |
+| **Jelou AI — AI Solutions Engineer (COL)** · **<25 post.** | https://co.linkedin.com/jobs/view/4475491649 | "2+ años" · agentes conversacionales e integraciones con CRMs/ERPs |
+| **Autonomic Mind — Software Engineer (Python + React)** · remoto Colombia · 78 post. | https://co.linkedin.com/jobs/view/4476918794 | "Desde 1 año" · muro Terraform/Kubernetes |
+| **Capgemini — AI Engineer** · 37 post. | https://co.linkedin.com/jobs/view/4476545042 | Sin años · agentes, multiagentes, RAG, LangGraph/Semantic Kernel |
+| **Globant — .NET + Azure + Angular + AI (Ssr)** · CO-Remote · 81 post. | https://co.linkedin.com/jobs/view/4475114285 | Su stack exacto · inglés B2 |
+| **Linqia — Backend Engineer (Python and SQL)** · contractor LatAm · 83 post. | https://co.linkedin.com/jobs/view/4476383174 | "2–4 años" · CV en inglés |
 
 ## Reglas al postular
 
@@ -95,8 +151,9 @@ Cuando pregunten, pedir: normal **2.800**, Senior **3.000**, prestación de serv
 **3.300–3.500**. Preguntar el esquema antes de dar número y dar rango; si el aviso publica rango,
 pedir dentro de él.
 
-**Fecha de inicio:** la exclusividad con SASOFTCO va hasta el **30 de agosto de 2026**. Plantear
-septiembre, y solo cuando salga el tema de oferta.
+**Fecha de inicio:** el contrato con SASOFTCO se renovó hasta el **30 de noviembre de 2026**, pero
+puede retirarse cuando quiera. Decir "on short notice" / "con unas dos semanas de aviso", y revisar
+exclusividad y preaviso de la renovación antes de firmar en otro lado.
 
 **Confidencialidad:** nada de nombre interno del producto, dominio de negocio, receta de
 optimización de costos ni clientes por nombre. Los clientes van **por sector**: gobierno y seguros.
