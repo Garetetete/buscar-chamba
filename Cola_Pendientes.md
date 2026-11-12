@@ -1,7 +1,18 @@
 # Cola de postulación — pendientes de enviar
 
-> Actualizado: 8 de noviembre de 2026. Solo quedan los barridos de las últimas dos semanas; lo
+> Actualizado: 11 de noviembre de 2026. Solo quedan los barridos de las últimas dos semanas; lo
 > anterior está en `Archivo/Cola_Pendientes_hasta_2026-10-05.md`.
+
+## Nuevas del barrido del 11 de noviembre — ver `Vacantes_2026-11-11.md`
+
+| Vacante | Enlace | Por qué |
+|---|---|---|
+| **Algoworks — Generative AI Engineer (Prompt/LLM, text-to-query)** · remoto LATAM con Colombia · contrato · 51 post. | https://co.linkedin.com/jobs/view/4489988842 | Validación, salida estructurada y evals automáticas con varios modelos · 2+ años de Python |
+| **Velozient — Back-End Developer (Python/AWS)** · remoto, Junior a Mid · 12 meses · 200+ post. | https://co.linkedin.com/jobs/view/4489470997 | Integraciones en Python (Salesforce, ERP, AWS) con Claude Code · 1+ año |
+| **Softechassociate — Software Engineer (Python)** · remoto LATAM · **USD 3.000–5.000** | https://www.getonbrd.com/jobs/programming/software-engineer-python-softtechassociate-remote | FastAPI/Django, REST, Postgres, pruebas · sin años · verificar la empresa |
+| **EPAM — Full Stack Developer Semi Senior** · remoto Colombia | CV a angelica_acosta@epam.com (asunto "Full Stack Developer Semi Senior") | React/TS + Node o Python, OAuth/OIDC · **3–5 años** |
+| **Praxis — AI Engineer / FDE** · remoto LATAM, contratista | CV en inglés a c.collantes@staff.praxisglobe.com con cargo, aspiración en USD y país | RAG, agentes, Python · ya está en proceso con Praxis: mencionarlo |
+| **ZYAKU — Backend Engineer (Node.js/Postgres)** · "Remote anywhere" · junior USD 30–45K/año | https://wellfound.com/jobs/5031256-mobile-engineer-react-native-expo-clone | Postgres correcto bajo reintentos, colas, Redis · 0–2 años · confirmar que acepta Colombia |
 
 ## Nuevas del barrido del 8 de noviembre — ver `Vacantes_2026-11-08.md`
 
