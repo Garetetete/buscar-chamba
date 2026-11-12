@@ -4,10 +4,16 @@ Aviso: https://co.linkedin.com/jobs/view/4481431932 (barrido del 26 oct). 100 % 
 residentes en Colombia. Empleo con ley colombiana: contrato fijo de 3 meses, renovable, con
 posibilidad de indefinido. **COP 7,7–9 M brutos/mes.** Reporta al Tech Lead, bajo el CTO.
 
-**La empresa:** Giunti Psychometrics es la editorial de pruebas psicológicas del grupo italiano
-Giunti, con presencia internacional. Su misión es "hacer accesible la ciencia psicológica a través
-de la tecnología": plataformas digitales donde se aplican y califican pruebas. Revisar su web antes
-de la reunión para nombrar un producto concreto.
+**La empresa (verificado el 12 nov):** fundada en 1950 en Florencia, Italia; primera editorial
+italiana de pruebas psicométricas. Es parte de Giunti Editore, el segundo grupo editorial de Italia,
+y usa el nombre Giunti Psychometrics desde 2016. Opera en más de 15 países de Europa, Asia y
+Latinoamérica; su lema es "Where Science Meets People" y se presenta como líder en psicometría
+científica y tecnología de salud mental. Su brazo en español se presenta como líder en evaluación
+psicológica en España y Latinoamérica. **Oficina en Colombia: Chía, Cundinamarca.** En enero de 2025
+cerró con **Pearson** un acuerdo exclusivo para distribuir y adaptar al español sus evaluaciones
+clínicas en Latinoamérica; compró Vetor Editora (Brasil) e invirtió en una startup chilena de salud
+mental. Clientes: psicólogos, colegios, universidades, clínicas, empresas (selección de personal)
+e investigación. Sitio: https://www.giuntipsy.com
 
 **Lo que piden y lo que él tiene:**
 
