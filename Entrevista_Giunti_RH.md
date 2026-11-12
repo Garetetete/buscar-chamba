@@ -101,6 +101,30 @@ en PrismadMusic, sumarlo aquí.
 **¿Qué no sabes?** Celery, Prefect, Kafka/RabbitMQ: "no los he usado en producción; sí manejo
 tareas asíncronas y reintentos, y aprendo rápido". No inventar.
 
+## Preguntas personales y de logística (lo más probable en RH)
+
+| Pregunta | Respuesta corta |
+|---|---|
+| ¿Dónde vives? | Villavicencio, Meta. Trabajo remoto desde casa |
+| ¿Cómo es tu espacio de trabajo? | Espacio propio y tranquilo, computador propio, internet estable (decir la velocidad real del plan); plan B: datos móviles |
+| ¿Dónde trabajas hoy y qué haces? | Desarrollador de Software en SASOFTCO desde 2025: backend de una plataforma SaaS de análisis documental con IA. Remoto/híbrido |
+| ¿Por qué te vas? | El contrato termina el 30 de noviembre; busco estabilidad y largo plazo. Hablar bien de SASOFTCO |
+| ¿Cuándo puedes empezar? | 1 de diciembre |
+| ¿Aspiración salarial? | COP 9 M brutos, dentro del rango publicado. Piso interno: 8,5 M |
+| ¿Te sirve contrato fijo de 3 meses? | Sí; preguntar cómo evalúan la renovación |
+| ¿Jornada de 42 h, lunes a viernes? | Sin problema |
+| ¿Estudios? | Ingeniero Electrónico; especializaciones en Ingeniería de Software (2025–2026) y en Instrumentación y Control Industrial (2024–2025), Universidad de los Llanos |
+| ¿Nivel de inglés? | B2: leo y escribo documentación técnica y converso en reuniones |
+| ¿Tienes otros procesos? | Sí, algunos avanzados, pero esta vacante es mi prioridad porque es mi stack exacto y es estable. (No dar nombres ni cifras de Praxis) |
+| ¿Qué sabes de Giunti? | Desde 1950 diseñan pruebas y herramientas psicológicas para educación, salud, empresas e investigación; grupo italiano con crecimiento internacional; misión de llevar la ciencia psicológica a la tecnología |
+| Fortaleza | Autonomía con responsabilidad: llevé una plataforma a producción yo solo, cuidando calidad y costos |
+| Debilidad | A veces me cuesta delegar o pedir ayuda pronto porque quiero resolverlo solo; lo trabajo comentando bloqueos temprano en el equipo |
+| ¿Cómo trabajas en equipo / remoto? | Comunicación escrita clara, avances diarios, revisión de código y documentación |
+| ¿Algo más? | "Me entusiasma el propósito de la empresa y el stack; quedo atento a los siguientes pasos" |
+
+Si preguntan por estado civil, hijos, religión o salud: no es obligatorio responder; se puede
+contestar breve y volver a lo laboral.
+
 ## Preguntas para hacerle a RH
 
 1. ¿Cómo son las siguientes etapas? ¿Hay prueba técnica?
