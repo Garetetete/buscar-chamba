@@ -88,6 +88,13 @@ producción**. Nada de esto es confidencial de SASOFTCO: es un proyecto aparte.
 > entender su API y su modelo de datos, autenticar, sincronizar sin duplicar, manejar errores y
 > límites, y dejar registro de todo. ¿Con qué sistemas trabajan ustedes? Así me preparo desde ya.
 
+Detalle de Wompi si piden profundizar (verificado en el código, 12 nov): interfaz de pasarela
+(`PaymentGatewayInterface`) para poder cambiar de proveedor; firma de integridad en el checkout;
+webhooks `transaction.updated` con verificación de checksum; consulta servidor a servidor del
+estado de la transacción cuando el cliente vuelve; bloqueo de la fila en una transacción de BD para
+que el webhook y el regreso del cliente nunca confirmen dos veces; detección de monto distinto;
+bitácora de eventos; y una pasarela simulada para pruebas.
+
 Cerrar con la pregunta convierte el hueco en interés. Si tocó Voyager (panel tipo CMS de Laravel)
 en PrismadMusic, sumarlo aquí.
 
