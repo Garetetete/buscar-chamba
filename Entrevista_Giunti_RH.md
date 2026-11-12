@@ -21,7 +21,7 @@ de la reunión para nombrar un producto concreto.
 | Seguridad, protección de datos | Multi-tenant con aislamiento por cliente, Keycloak/OIDC |
 | Deseables: GCP (Cloud Run, **Vertex AI**), **LLM y RAG**, Alembic, GitHub Actions | Vertex AI/Gemini en producción, rag-doc-assistant, GitHub Actions |
 | Deseables que no tiene | Celery, Prefect, RabbitMQ/Kafka, Django: decirlo con honestidad |
-| Título en Sistemas/Software "o afín" | Ingeniero Electrónico: afín, con programación desde la carrera |
+| Título en Sistemas/Software "o afín" | Ingeniero Electrónico **+ Especialización en Ingeniería de Software** (Universidad de los Llanos, 2025–2026). Hueco cerrado |
 
 ## Respuestas preparadas (en español)
 
@@ -77,6 +77,19 @@ que USD 2.000 como contratista (prima, cesantías, vacaciones y seguridad social
 
 Sirve también para **integraciones** (pagos y API externa) y para **mantener apps PHP en
 producción**. Nada de esto es confidencial de SASOFTCO: es un proyecto aparte.
+
+**¿Has integrado CMS, PIM, ERP o CRM?** (su requisito obligatorio más flojo: no inflarlo)
+
+> Un ERP o CRM comercial como tal no, pero integrar sistemas de negocio por API es buena parte de
+> lo que hago. En una empresa de seguros, con mi equipo, conectamos las alertas de monitoreo con la
+> mesa de servicio Aranda: un flujo que creaba o actualizaba tickets sin duplicarlos, consultando
+> primero un servicio propio que era la fuente de verdad. En MelodicApp integré la pasarela de
+> pagos Wompi y una API externa con reintentos. El patrón es el mismo con un ERP o un CRM:
+> entender su API y su modelo de datos, autenticar, sincronizar sin duplicar, manejar errores y
+> límites, y dejar registro de todo. ¿Con qué sistemas trabajan ustedes? Así me preparo desde ya.
+
+Cerrar con la pregunta convierte el hueco en interés. Si tocó Voyager (panel tipo CMS de Laravel)
+en PrismadMusic, sumarlo aquí.
 
 **¿Qué no sabes?** Celery, Prefect, Kafka/RabbitMQ: "no los he usado en producción; sí manejo
 tareas asíncronas y reintentos, y aprendo rápido". No inventar.
