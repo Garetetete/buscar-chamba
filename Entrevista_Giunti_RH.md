@@ -15,7 +15,7 @@ de la reunión para nombrar un producto concreto.
 |---|---|
 | Python + **FastAPI**, autonomía | Su trabajo diario en SASOFTCO: 120+ endpoints, 8 servicios, hecho solo |
 | APIs REST, MySQL/PostgreSQL, Docker, Git | PostgreSQL con RLS, Docker, Git, CI/CD |
-| Mantener apps en **PHP** | **Laravel** (tiene CV de Laravel + Vue) |
+| Mantener apps en **PHP** | **MelodicApp** (melodicapp.com), en producción: API en **Laravel 10 / PHP 8.1** (empezó en Laravel 13 / PHP 8.3 y la portó porque el hosting corre 8.1). Ver abajo |
 | Integrar CMS, PIM, ERP o CRM | Integración con **Aranda Service Desk** vía n8n (trabajo de equipo; ayudó en todas las fases). Confirmar si tiene otra integración con ERP/CRM |
 | Pruebas, documentación, revisión de código | pytest, CI (Manukora: 77 pruebas) |
 | Seguridad, protección de datos | Multi-tenant con aislamiento por cliente, Keycloak/OIDC |
@@ -63,7 +63,20 @@ que USD 2.000 como contratista (prima, cesantías, vacaciones y seguridad social
 
 **Inglés.** B2: lee y escribe documentación y habla en reuniones técnicas. Piden intermedio.
 
-**PHP.** Laravel: decir en qué proyecto y qué hizo. Confirmar los detalles antes de la llamada.
+**¿Tienes experiencia con PHP/Laravel?**
+
+> Sí. Construí el backend de MelodicApp, una plataforma que convierte una canción en su partitura
+> en PDF, y hoy está en producción en melodicapp.com. Es una API en Laravel 10 con PHP 8.1 y
+> MySQL, con arquitectura de servicios y repositorios, autenticación JWT y unas 34 rutas. Integré
+> varios servicios externos: la pasarela de pagos **Wompi** (el procesamiento arranca solo cuando
+> el pago se confirma, para no gastar en pedidos que nadie paga), la API de transcripción musical
+> de Klangio con consultas periódicas y reintentos, y la edición del PDF para sellar el título y
+> los créditos. Además tiene enlaces de descarga firmados, límites de subida y pruebas con PHPUnit.
+> El proyecto empezó en Laravel 13 con PHP 8.3, y lo porté a Laravel 10 con PHP 8.1 porque el
+> servidor de producción usaba esa versión.
+
+Sirve también para **integraciones** (pagos y API externa) y para **mantener apps PHP en
+producción**. Nada de esto es confidencial de SASOFTCO: es un proyecto aparte.
 
 **¿Qué no sabes?** Celery, Prefect, Kafka/RabbitMQ: "no los he usado en producción; sí manejo
 tareas asíncronas y reintentos, y aprendo rápido". No inventar.
